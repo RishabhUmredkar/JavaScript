@@ -1,0 +1,40 @@
+Day 2 
+Variables 
+
+      | Declaration | Initialization | (Declaration + Initialization) | updatation | Redeclaration + ReInitialization |
+Var   |     YES     |   yes          |              YES               |     YES    |                YES               |
+Let   |     YES     |   yes          |              YES               |     YES    |                No                |
+Const |     NO      |   NO           |              YES               |     NO     |                No                |
+
+
+if we dont Declare any value to the Variables then it will undefined
+
+
+//By using Double Qoutes
+console.log("the Sum of "+ a1+ " and "+b + " is "+(a1+b));
+
+//By using Backticks
+console.log(`the sum of ${a1} and ${b} is ${a1+b}`);
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Day 4
+
+1.    => ---- This is called fat function / arrow Function
+
+2.     Question : Find the number whether it is prime or not.
+
+3.    Function Expression
+      Assigning the function to value
+      It is also called anonymous Function. Which does Not have any name. 
+      
+4.    Immediate Invoke Function
+      whenever you declare the function you need to call the function.
+
+5.    Higher Order Function
+      A fucntion which will accept normal value as well as another function as an argument
+      
+6.    Call Back Function
+      A fucntion which act as parameter to another function
