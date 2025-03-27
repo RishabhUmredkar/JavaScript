@@ -38,3 +38,52 @@ Day 4
       
 6.    Call Back Function
       A fucntion which act as parameter to another function
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Day 5
+
+1. Arrow Function
+        let func = () => {}
+
+2. Regualr Function
+      function demo()
+      {
+
+      }
+
+
+3. Function with an expression
+      3.1 with arrow function
+      let f = () => {}
+
+      3.2 with regualr function
+      let f2 = function(){}
+
+
+4. first calss / first citizen fucntion
+      let func = () => {}
+
+
+5. Immediate invoke function
+      ((a)=>console.log(a))(10)   ------------this function is called only once
+
+      console.log("start");
+      ((a)=>{console.log(a)})(10);
+      console.log("end");
+
+5. High order function(hof) and call by function(cbf)           
+      let hof = (cbf) =>{
+//      console.log(cbf);
+      cbf();
+      };
+
+      let cbf = () => {
+      console.log("cbf");
+      };
+
+      hof(cbf);
