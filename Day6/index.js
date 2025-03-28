@@ -47,18 +47,20 @@ console.log(x);
 // • Goal: The callback should decide how to display the message (e.g., print "HELLO" if the message is "hello").
 // • Hint: A callback is just a function you pass to another function.
 
+//1.
+let shout = (msg,cbf1) =>{
+    cbf1(msg);
+};
 
-// let shout = (msg,cbf) =>{
-//     cbf(msg);
-// };
+let cbf1 = (msg) => {
+    console.log(msg.toUpperCase());
+};
 
-// let cbf = (msg) => {
-//     console.log(msg);
-// };
-
-// shout("hello",cbf);
+shout("hello",cbf1);
 
 
+
+//2.
 let robot = (name1, cbf)=>{
     cbf(name1)
 }
@@ -71,6 +73,8 @@ let cbf = (name1)=>{
 robot("Rishabh",cbf);
 
 
+
+//3.
 let mathWizard = (num1 , num2, opt)=>{
     opt(num1, num2);
 }
@@ -88,6 +92,7 @@ mathWizard(10,20, sub);
 
 
 
+//4.
 let decisionMaker = (decision,sayNo,sayYes) =>{
 
     if(decision){
@@ -110,6 +115,9 @@ let isHappy = true;
 decisionMaker(isHappy, sayNo, sayYes);
 
 
+
+
+//5.
 let doubleFun = (number,double) =>{
     double(number);
 }
@@ -124,8 +132,237 @@ doubleFun(5 , double);
 
 
 
-let giveCompliment = (name12,giveCompliment) =>{
-    console.log(name12);
+//6.
+let giveCompliment = (name12, compliment) =>{
+    compliment(name12);
 }
 
-compliment("Rishabh", giveCompliment);
+let compliment = (name12) =>{
+    console.log(`hey ${name12}`);
+    
+}
+
+giveCompliment("Rishabh", compliment);
+
+
+
+//7.
+let evenOdd = (num, checkNumber) =>{
+    checkNumber(num);
+}
+
+let check = (num) =>{
+    if(num %2 ==0)
+    {
+        console.log(`${num} is Even`);
+    }
+    else{
+        console.log(`${num} is Odd`);
+    }
+}
+evenOdd(12, check);
+
+
+
+
+//8.
+let  judgeNumber = (num, check) =>{
+    check(num);
+}
+
+let find = (num) =>{
+    if(num >0){
+        console.log(`${num} Is positive`);
+    }
+    else{
+        console.log(`${num} Is Negative`);
+    }
+} 
+
+judgeNumber(-12, find);
+
+
+
+//9.
+let tinyCalculator = (num1, num2, opt) =>{
+    console.log(opt(num1, num2));
+    
+}
+
+let addition = (num1, num2) =>{
+    return num1 + num2
+}
+
+let substraction = (num1, num2) =>{
+    return num1 - num2
+}
+
+let multiplication = (num1, num2) =>{
+    return num1 * num2
+}
+
+let division = (num1, num2) =>{
+    return num1 + num2
+}
+tinyCalculator(15 , 5, addition);
+
+
+
+//10.
+let nameStyler =  (name, style) =>{
+    console.log(style(name));
+}
+
+let toUpperCaseStyle = (name) =>name.toUpperCase();
+let toLowerCaseStyle = (name) =>name.toLowerCase();
+let toStarCaseStyle = (name) =>`⭐${name}⭐`;
+
+nameStyler("Rishabh", toUpperCaseStyle);
+//nameStyler("Rishabh", toLowerCaseStyle);
+//nameStyler("Rishabh", toStarCaseStyle);
+
+
+//11.
+let transform = (numb1 , callback) =>{
+    console.log(callback(numb1));
+}
+
+let square = (numb1) =>{
+    return numb1*numb1;
+}
+let triple = (numb1) =>{
+    return numb1*numb1*numb1;
+}
+
+transform(5, square);
+transform(4, triple);
+
+
+
+//12.
+let askOracle = (que,randomGenerate)=>{
+    console.log(`Question : ${que}`);
+    console.log(`Oracle ans :${randomGenerate()} `);
+}
+
+let randomAns = () =>{
+    const answer = ["yes", "no", "MayBe", "not Sure", "Definitely"];
+    return answer[Math.floor(Math.random() * answer.length)];
+}
+
+
+askOracle("Is India greate country", randomAns);
+
+//13.
+let numberBattle = (number2,number1, large) =>{
+    console.log(large(number1, number2));
+}
+
+let largeNumber = (number1, number2) =>{
+    return Math.max(number1,number2);
+}
+
+numberBattle(121, 25, largeNumber);
+
+
+
+//14.
+
+let moodChecker = (mood, msg) =>{
+   console.log(msg(mood));
+}
+
+let message = (mood) =>{
+    if(mood == "happy"){
+        return "😀";
+    }if(mood == "sad"){
+        return "😔";
+    }if(mood == "angry"){
+        return "😡";
+    }if(mood == "masti"){
+        return "💥";
+    }if(mood == "tired"){
+        return "😴";
+    }else{
+        return "🤔";
+    }
+}
+moodChecker("happy", message);
+
+
+//15.
+let magicMirror = (word, reverse)=>{
+    console.log(reverse(word));
+}
+let reverse = (word) =>{
+    return word.split("").reverse().join("");
+}
+
+magicMirror("hbahsir",reverse);
+
+
+//16. 
+
+let isAdult = (age, check) =>{
+    console.log(check(age));
+}
+
+let checkAge = (age) =>{
+    if(age>17)
+    {
+        return "you are an adult";
+    }
+    else{
+        return "you are minor"
+    }
+}
+isAdult(18,checkAge);
+
+//17.
+let magicNumber = (number,lucky)=>{
+    console.log(lucky(number));
+}
+
+let lucky = (number)=>{
+    if(number == 7){
+        return "Lucky number !"
+    }
+    else{
+        return "Just a number !"
+    }
+}
+magicNumber(9,lucky)
+
+//18.
+let speak = (msg, volume)=>{
+    console.log(volume(msg));
+}
+
+let volume = (msg) =>{
+    return msg === msg.toUpperCase() ? "Shouting" : "Whispering !"
+}
+speak("HELLO",volume);
+
+
+//19.
+let magic = (num, divide)=>{
+    console.log(divide(num));
+}
+
+let divide = (num) =>{
+    return num %5  == 0 ? "High Five !" : "No Magic !"
+}
+magic(26,divide);
+
+
+
+//20.
+let introduce = (name, msg)=>{
+    console.log(msg(name));
+}
+
+let msg = (name) =>{
+    return `Hey I am ${name}! Nice to meet you! `;
+}
+
+introduce("Rishabh",msg)
