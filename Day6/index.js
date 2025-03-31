@@ -213,9 +213,15 @@ let nameStyler =  (name, style) =>{
     console.log(style(name));
 }
 
-let toUpperCaseStyle = (name) =>name.toUpperCase();
-let toLowerCaseStyle = (name) =>name.toLowerCase();
-let toStarCaseStyle = (name) =>`⭐${name}⭐`;
+let toUpperCaseStyle = (name) =>{
+    return name.toUpperCase();
+}
+let toLowerCaseStyle = (name) =>{
+    return name.toLowerCase();
+}
+let toStarCaseStyle = (name) =>{
+    return `⭐${name}⭐`;
+}
 
 nameStyler("Rishabh", toUpperCaseStyle);
 //nameStyler("Rishabh", toLowerCaseStyle);
@@ -295,10 +301,17 @@ let magicMirror = (word, reverse)=>{
     console.log(reverse(word));
 }
 let reverse = (word) =>{
-    return word.split("").reverse().join("");
+let ans ="";
+    for(i = word.length; i>=0; i--)
+    {
+        ans = ans + word.charAt(i);
+    }
+    return ans;
 }
 
 magicMirror("hbahsir",reverse);
+
+
 
 
 //16. 
@@ -339,9 +352,9 @@ let speak = (msg, volume)=>{
 }
 
 let volume = (msg) =>{
-    return msg === msg.toUpperCase() ? "Shouting" : "Whispering !"
+    return msg == msg.toUpperCase() ? "Shouting" : "Whispering !"
 }
-speak("HELLO",volume);
+speak("hELLO",volume);
 
 
 //19.
@@ -365,4 +378,4 @@ let msg = (name) =>{
     return `Hey I am ${name}! Nice to meet you! `;
 }
 
-introduce("Rishabh",msg)
+introduce("Rishabh",msg) ;
