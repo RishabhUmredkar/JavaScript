@@ -1,10 +1,46 @@
+BackUp clss
+Day 1 
+what is JS:
+      It is scripting Language. Highlevel Language. Object Oriented. 
+      Object Based. Single Thread. Synchronized. Iterpretd and compiled Language
+
+execution of JS :
+      FrontEnd code will go to js engine then js engine divide js code into small parts
+      and then it will go compiler then interpeter and we will get the output
+
+For execution we want js Engine which is already present in browser. Other than that we can run JS by using NodeJs
+
+
+How Many way to write the JS
+1. Internal (In html we use <Script tag>)
+2. External (.js File)
+
+Declaration and Initialization
+      We can declare and Initialise the variable without using datatype then it will becomoe the global variable.
+
+
+Tokens : smallest part of programming Language
+      types : 1. Keyword 2. Identifier 3. Operators 4. Seperators 5. Literals
+
+Datatype : there are 8 datatype
+            1.Number   2.boolean   3.String    4.Symbol     5.Null      6.Undefined       7.NAN      8.bigInt
+
+
+
+Declaration of String
+      we can declare String  
+            in Single Qoutes ('')
+            in Double Qoutes (" ")
+            in Backticks (``)
+
+
 Day 2 
 Variables 
 
-      | Declaration | Initialization | (Declaration + Initialization) | updatation | Redeclaration + ReInitialization |
-Var   |     YES     |   yes          |              YES               |     YES    |                YES               |
-Let   |     YES     |   yes          |              YES               |     YES    |                No                |
-Const |     NO      |   NO           |              YES               |     NO     |                No                |
+variable  | Declaration | Initialization | (Declaration + Initialization) | updatation | Redeclaration + ReInitialization |     Default value        |
+Var       |     YES     |   yes          |              YES               |     YES    |                YES               |       Window Object      |
+Let       |     YES     |   yes          |              YES               |     YES    |                No                |   Temporarol dead zone   |
+Const     |     NO      |   NO           |              YES               |     NO     |                No                |   Temporarol dead zone   |
 
 
 if we dont Declare any value to the Variables then it will undefined
@@ -99,3 +135,56 @@ Day 5
 Day 6
 
 AST  : Abstract Syntax Tree
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Day 8
+1. Temporarol Dead Zone - Time spent between variable Declaration and Initialization is known as Temporarol dead zone.
+
+2. Hoisting      - Taking any object in the top
+                              taking the variable in the top of execution is Hoisting.
+
+3. this :       - It is point toward object.
+
+When we access variable declared in "let" and "Const" it will get the value from Temporarol dead zone and it will thrown an error.
+But When we access variable declared in "var" it will get the value from Window object and it will shown undefined.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Day 9
+
+1.    Regular Function is getting hoisted as a function.
+2.    Arrow Function is getting hoisted as a variable not a function then the result will be in error.
+3.    Function with Expression is getting hoisted as a variable not a function then the result will be in error.
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Day 11
+
+** String ***
+
+Theere are 4 way to create String
+Declaration of String
+      we can declare String  
+            in Single Qoutes ('')
+            in Double Qoutes (" ")
+            in Backticks (``)
+            By new Keyword let String = new String("hello);
+
+
