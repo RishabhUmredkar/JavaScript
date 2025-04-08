@@ -1,3 +1,12 @@
+1.    Var / Let / Const
+2.    null vs undefined ?
+3.    what is Nan ?
+4.    Symbol
+5.    binInt ? Range ?
+6.    Which vatiable will be hoisted in taz
+7.    truthly / falsly values 
+
+
 BackUp clss
 Day 1 
 what is JS:
