@@ -51,7 +51,7 @@
 
 ### 📅 Day 2 – Variables
 
-| Variable | Declaration | Initialization | Decl. + Init. | Updation | Redecl. + Reinit. | Default        Value            |
+| Variable | Declaration | Initialization | Decl. + Init. | Updation | Redecl. + Reinit. | Default Value            |
 |----------|-------------|----------------|----------------|----------|--------------------|--------------------------|
 | var      | YES         | YES            | YES            | YES      | YES                | Window Object            |
 | let      | YES         | YES            | YES            | YES      | NO                 | Temporal Dead Zone       |
@@ -104,9 +104,9 @@ console.log("end");
 
 6. **HOF and CBF:**  
 ```js
-let hof = (cbf) => { cbf(); };  
-let cbf = () => { console.log("cbf"); };  
-hof(cbf);
+let hof = (cbf_function) => { cbf_function(); };  
+let cbf_function = () => { console.log("cbf_function"); };  
+hof(cbf_function);
 ```
 
 ---
