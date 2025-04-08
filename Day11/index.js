@@ -102,7 +102,7 @@ console.log(typeof check15); // string
 
 
 
-let movie = "bahubali"
+let movie = "Bahubali"
 console.log(movie.replace("b","hii")); // bahubali
 console.log(movie.replaceAll("b","baaaaaaaa")); // bahubali
 console.log(movie.replace(/b/g,"hii")); // bahubali
@@ -110,5 +110,8 @@ console.log(movie.replace(/b/g,"hii")); // bahubali
 // console.log(movie.reverse()); // TypeError: movie.reverse is not a function 
 
 
-movie = movie.replace("b","kh")
+// movie = movie.replace("b","kh")
 console.log(movie.replace("hu","li"));
+
+
+console.log(movie.includes("Bahu"));
