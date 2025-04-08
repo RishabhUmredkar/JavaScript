@@ -151,25 +151,4 @@ hof(cbf_function);
 
 
 
-#### 🔤 String Methods
-- `toLowerCase()` – Converts string to lowercase.
-- `toUpperCase()` – Converts string to uppercase.
-- `charAt(index)` – Returns the character at the given index.
-- `charCodeAt(index)` – Returns the UTF-16 code of the character at the given index.
-- `startsWith("text")` – Returns true if string starts with specified characters.
-- `endsWith("text")` – Returns true if string ends with specified characters.
-- `padStart(length, char)` – Pads the string from the start.
-- `padEnd(length, char)` – Pads the string from the end.
-- `indexOf("char")` – Returns the index of the first occurrence of specified character.
-- `replace("a", "b")` – Replaces first match of "a" with "b".
-- `replaceAll("a", "b")` – Replaces all matches of "a" with "b".
-- `replace(/pattern/g, "b")` – Uses regex for global replacement.
-- `includes("text")` – Returns true if string contains specified text.
-
-🛑 Note:
-- `.reverse()` is not available for strings directly.
-- You need to convert string to array to reverse:  
-  ```js
-  movie.split("").reverse().join("")
-
 ---

@@ -2,7 +2,6 @@ let num = 987465665;
 console.log(typeof typeof num);
 
 
-
 let str = "98h6"
 console.log(str.toLowerCase());
 console.log(str.toUpperCase());
@@ -10,9 +9,8 @@ console.log(str.charAt(0));
 console.log(str.charCodeAt(0));
 console.log(str.startsWith("98"));
 console.log(str.endsWith("6"));
-console.log(str.padStart(10,"X"));
-console.log(str.padEnd(10,"*"));
-
+console.log(str.padStart(10, "X"));
+console.log(str.padEnd(10, "*"));
 
 
 let newstr = "hello"
@@ -29,10 +27,8 @@ let a = true
 let check = a.toString()
 console.log(check); // true
 
-
-
 let b = 123
-let check2 = b.toString()   
+let check2 = b.toString()
 console.log(check2); // 123
 console.log(typeof check2); // string
 
@@ -102,16 +98,28 @@ console.log(typeof check15); // string
 
 
 
-let movie = "Bahubali"
-console.log(movie.replace("b","hii")); // bahubali
-console.log(movie.replaceAll("b","baaaaaaaa")); // bahubali
-console.log(movie.replace(/b/g,"hii")); // bahubali
+let movie = "Bahubali The Beginning"
+console.log(movie.replace("b", "hii")); // bahubali
+console.log(movie.replaceAll("b", "baaaaaaaa")); // bahubali
+console.log(movie.replace(/b/g, "hii")); // bahubali
 
 // console.log(movie.reverse()); // TypeError: movie.reverse is not a function 
 
 
 // movie = movie.replace("b","kh")
-console.log(movie.replace("hu","li"));
-
-
+console.log(movie.replace("hu", "li"));
 console.log(movie.includes("Bahu"));
+console.log(movie.slice(0, 3));
+console.log(movie.split(" "));
+
+
+let num10 = 10;
+console.log(isFinite(num10));
+console.log(Number.isInteger(num10));
+console.log(Number.isNaN(num10));
+console.log(Number);
+console.log(parseInt());
+
+
+let a10 = true
+console.log(Boolean(a10));

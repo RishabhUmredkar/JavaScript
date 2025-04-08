@@ -196,4 +196,19 @@ Declaration of String
             in Backticks (``)
             By new Keyword let String = new String("hello);
 
+| No. | Method                    | Syntax                        |
+|-----|---------------------------|-------------------------------|
+|  1  | toLowerCase()             | str.toLowerCase()             |
+|  2  | toUpperCase()             | str.toUpperCase()             |
+|  3  | charAt(index)             | str.charAt(index)             |
+|  4  | charCodeAt(index)         | str.charCodeAt(index)         |
+|  5  | startsWith("text")        | str.startsWith("text")        |
+|  6  | endsWith("text")          | str.endsWith("text")          |
+|  7  | padStart(length, char)    | str.padStart(length, "char")  |
+|  8  | padEnd(length, char)      | str.padEnd(length, "char")    |
+|  9  | indexOf("char")           | str.indexOf("char")           |
+| 10  | replace("a", "b")         | str.replace("a", "b")         |
+| 11  | replaceAll("a", "b")      | str.replaceAll("a", "b")      |
+| 12  | replace(/pattern/g, "b")  | str.replace(/pattern/g, "b")  |
+| 13  | includes("text")          | str.includes("text")          |
 
