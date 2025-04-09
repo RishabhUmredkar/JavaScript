@@ -81,6 +81,15 @@ when you want to store the bin integer value then you have to write "n" at the e
 
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+BackUp class
+
+Day 3
+
+Lexical Scope : accessing the members outside the function.
+closure : a special maemory allocation in the window Object.
+
 
 
 
@@ -255,3 +264,14 @@ Declaration of String
 | 12  | replace(/pattern/g, "b")  | str.replace(/pattern/g, "b")  |
 | 13  | includes("text")          | str.includes("text")          |
 
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 12 
+Arrays
+      We can store any type of data in an single array.

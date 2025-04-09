@@ -66,6 +66,13 @@ console.log(`The sum of ${a1} and ${b} is ${a1 + b}`); // Backticks
 
 ---
 
+### 🗅 Day 3
+
+**Lexical Scope:** Accessing the members outside the function.  
+**Closure:** A special memory allocation in the window object.
+
+---
+
 ### 🗅 Day 4 – Functions
 
 1. `=>` is called fat function / arrow function  
@@ -167,4 +174,36 @@ Declaration of String
 | 11  | replaceAll("a", "b")      | str.replaceAll("a", "b")      |
 | 12  | replace(/pattern/g, "b")  | str.replace(/pattern/g, "b")  |
 | 13  | includes("text")          | str.includes("text")          |
+
+---
+
+### 🗅 Day 12 – Arrays
+
+**1. What is Array?**  
+An Array is a data structure that can hold multiple values of same or different types.
+
+**2. How to Declare Arrays?**
+```js
+let arr = [1, 2, 3];        // Using literals
+let arr2 = new Array(3);    // Using constructor
+```
+
+**3. Array Methods**
+
+| No. | Method          | Description                                           | Syntax                         |
+|-----|------------------|-------------------------------------------------------|--------------------------------|
+|  1  | push()           | Adds element at the end                               | arr.push(value)                |
+|  2  | pop()            | Removes last element                                  | arr.pop()                      |
+|  3  | unshift()        | Adds element at the beginning                         | arr.unshift(value)             |
+|  4  | shift()          | Removes first element                                 | arr.shift()                    |
+|  5  | splice()         | Adds/Removes items                                    | arr.splice(start, deleteCount, item1, ...) |
+|  6  | slice()          | Returns a portion of the array                        | arr.slice(start, end)          |
+|  7  | indexOf()        | Returns first index of element                        | arr.indexOf(value)             |
+|  8  | lastIndexOf()    | Returns last index of element                         | arr.lastIndexOf(value)         |
+|  9  | includes()       | Checks if value exists                                | arr.includes(value)            |
+| 10  | join()           | Joins all elements into string                        | arr.join(separator)            |
+| 11  | reverse()        | Reverses the array                                    | arr.reverse()                  |
+| 12  | sort()           | Sorts elements                                        | arr.sort()                     |
+| 13  | concat()         | Merges two arrays                                     | arr1.concat(arr2)              |
+| 14  | flat()           | Flattens nested arrays                                | arr.flat(depth)                |
 
