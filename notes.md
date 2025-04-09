@@ -1,4 +1,3 @@
-
 # 📒 JavaScript Learning Notes  
 **By Rishabh Umredkar**  
 
@@ -18,7 +17,7 @@
 
 ## 🧠 Backup Class
 
-### 📅 Day 1 – Introduction to JavaScript
+### 🗕 Day 1 – Introduction to JavaScript
 
 **What is JavaScript?**  
 - Scripting Language, High-level, Object-Oriented  
@@ -45,11 +44,11 @@
 5. Null    6. Undefined  7. NaN   8. BigInt  
 
 **String Declaration:**  
-- Single quotes `''`, Double quotes `""`, Backticks ```` ````
+- Single quotes `''`, Double quotes `""`, Backticks ``` ```
 
 ---
 
-### 📅 Day 2 – Variables
+### 🗕 Day 2 – Variables
 
 | Variable | Declaration | Initialization | Decl. + Init. | Updation | Redecl. + Reinit. | Default Value            |
 |----------|-------------|----------------|----------------|----------|--------------------|--------------------------|
@@ -67,7 +66,7 @@ console.log(`The sum of ${a1} and ${b} is ${a1 + b}`); // Backticks
 
 ---
 
-### 📅 Day 4 – Functions
+### 🗕 Day 4 – Functions
 
 1. `=>` is called fat function / arrow function  
 2. Prime number check example  
@@ -78,7 +77,7 @@ console.log(`The sum of ${a1} and ${b} is ${a1 + b}`); // Backticks
 
 ---
 
-### 📅 Day 5 – Function Types
+### 🗕 Day 5 – Function Types
 
 1. **Arrow Function:** `let func = () => {}`  
 2. **Regular Function:**  
@@ -111,13 +110,13 @@ hof(cbf_function);
 
 ---
 
-### 📅 Day 6
+### 🗕 Day 6
 
 - AST: Abstract Syntax Tree
 
 ---
 
-### 📅 Day 8 – Hoisting & Temporal Dead Zone
+### 🗕 Day 8 – Hoisting & Temporal Dead Zone
 
 1. **Temporal Dead Zone (TDZ):**  
    Time between variable declaration and initialization  
@@ -128,20 +127,20 @@ hof(cbf_function);
 3. **`this`:** Refers to the current object  
 
 **Behavior:**  
-- `let` / `const` in TDZ ➝ Error  
-- `var` ➝ Hoisted to window object ➝ `undefined`  
+- `let` / `const` in TDZ ➔ Error  
+- `var` ➔ Hoisted to window object ➔ `undefined`  
 
 ---
 
-### 📅 Day 9 – Hoisting (Advanced)
+### 🗕 Day 9 – Hoisting (Advanced)
 
-1. Regular Function ➝ Hoisted as function  
-2. Arrow Function ➝ Hoisted as variable ➝ Error  
-3. Function Expression ➝ Hoisted as variable ➝ Error  
+1. Regular Function ➔ Hoisted as function  
+2. Arrow Function ➔ Hoisted as variable ➔ Error  
+3. Function Expression ➔ Hoisted as variable ➔ Error  
 
 ---
 
-### 📅 Day 11 – Strings
+### 🗕 Day 11 – Strings
 
 **Ways to Create Strings:**  
 - Single quotes `'Hello'`  
@@ -149,6 +148,35 @@ hof(cbf_function);
 - Backticks `` `Hello` ``  
 - Using `new` keyword: `let str = new String("Hello");`  
 
-
-
 ---
+
+### 🗕 Day 12 – Arrays
+
+**1. What is Array?**  
+An Array is a data structure that can hold multiple values of same or different types.
+
+**2. How to Declare Arrays?**
+```js
+let arr = [1, 2, 3];        // Using literals
+let arr2 = new Array(3);    // Using constructor
+```
+
+**3. Array Methods**
+
+| No. | Method          | Description                                           | Syntax                         |
+|-----|------------------|-------------------------------------------------------|--------------------------------|
+|  1  | push()           | Adds element at the end                               | arr.push(value)                |
+|  2  | pop()            | Removes last element                                  | arr.pop()                      |
+|  3  | unshift()        | Adds element at the beginning                         | arr.unshift(value)             |
+|  4  | shift()          | Removes first element                                 | arr.shift()                    |
+|  5  | splice()         | Adds/Removes items                                    | arr.splice(start, deleteCount, item1, ...) |
+|  6  | slice()          | Returns a portion of the array                        | arr.slice(start, end)          |
+|  7  | indexOf()        | Returns first index of element                        | arr.indexOf(value)             |
+|  8  | lastIndexOf()    | Returns last index of element                         | arr.lastIndexOf(value)         |
+|  9  | includes()       | Checks if value exists                                | arr.includes(value)            |
+| 10  | join()           | Joins all elements into string                        | arr.join(separator)            |
+| 11  | reverse()        | Reverses the array                                    | arr.reverse()                  |
+| 12  | sort()           | Sorts elements                                        | arr.sort()                     |
+| 13  | concat()         | Merges two arrays                                     | arr1.concat(arr2)              |
+| 14  | flat()           | Flattens nested arrays                                | arr.flat(depth)                |
+

@@ -7,7 +7,9 @@
 7.    truthly / falsly values 
 
 
-BackUp clss
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+BackUp class
 Day 1 
 what is JS:
       It is scripting Language. Highlevel Language. Object Oriented. 
@@ -42,6 +44,47 @@ Declaration of String
             in Double Qoutes (" ")
             in Backticks (``)
 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+BackUp class
+
+Day 2
+
+1.    Null and Undefined
+null :       When You assign the value as a null then you get the Null.
+undefined :  When you dont assign any value to variable then yo get the undefined.
+
+
+2.    bigInt
+when you want to store the bin integer value then you have to write "n" at the end of the number.
+
+3.    Difference between "==" and "==="
+== :   It it compare only value not respective to the datatype.
+=== :  It it compare value with respective to the datatype.
+
+
+4.    Function
+4.1   simple Function.
+            syntax : function Identifier(){}
+
+4.2   Arrow Function   (It is like the it retruns the values)
+            It will return the ans implicitly. 
+            We store the function in variable.
+            syntax : let demo = () =>{}
+            => : this is known as fat Arrow.
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 Day 2 
 Variables 
