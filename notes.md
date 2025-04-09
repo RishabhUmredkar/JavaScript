@@ -17,7 +17,7 @@
 
 ## 🧠 Backup Class
 
-### 🗕 Day 1 – Introduction to JavaScript
+### 🗅 Day 1 – Introduction to JavaScript
 
 **What is JavaScript?**  
 - Scripting Language, High-level, Object-Oriented  
@@ -48,7 +48,7 @@
 
 ---
 
-### 🗕 Day 2 – Variables
+### 🗅 Day 2 – Variables
 
 | Variable | Declaration | Initialization | Decl. + Init. | Updation | Redecl. + Reinit. | Default Value            |
 |----------|-------------|----------------|----------------|----------|--------------------|--------------------------|
@@ -66,7 +66,7 @@ console.log(`The sum of ${a1} and ${b} is ${a1 + b}`); // Backticks
 
 ---
 
-### 🗕 Day 4 – Functions
+### 🗅 Day 4 – Functions
 
 1. `=>` is called fat function / arrow function  
 2. Prime number check example  
@@ -77,7 +77,7 @@ console.log(`The sum of ${a1} and ${b} is ${a1 + b}`); // Backticks
 
 ---
 
-### 🗕 Day 5 – Function Types
+### 🗅 Day 5 – Function Types
 
 1. **Arrow Function:** `let func = () => {}`  
 2. **Regular Function:**  
@@ -110,13 +110,13 @@ hof(cbf_function);
 
 ---
 
-### 🗕 Day 6
+### 🗅 Day 6
 
 - AST: Abstract Syntax Tree
 
 ---
 
-### 🗕 Day 8 – Hoisting & Temporal Dead Zone
+### 🗅 Day 8 – Hoisting & Temporal Dead Zone
 
 1. **Temporal Dead Zone (TDZ):**  
    Time between variable declaration and initialization  
@@ -132,7 +132,7 @@ hof(cbf_function);
 
 ---
 
-### 🗕 Day 9 – Hoisting (Advanced)
+### 🗅 Day 9 – Hoisting (Advanced)
 
 1. Regular Function ➔ Hoisted as function  
 2. Arrow Function ➔ Hoisted as variable ➔ Error  
@@ -140,43 +140,31 @@ hof(cbf_function);
 
 ---
 
-### 🗕 Day 11 – Strings
+### 🗅 Day 11 – Strings
 
-**Ways to Create Strings:**  
-- Single quotes `'Hello'`  
-- Double quotes `"Hello"`  
-- Backticks `` `Hello` ``  
-- Using `new` keyword: `let str = new String("Hello");`  
+** String ***
 
----
+Theere are 4 way to create String
+Declaration of String
+      we can declare String  
+            in Single Qoutes ('')
+            in Double Qoutes (" ")
+            in Backticks (``)
+            By new Keyword let String = new String("hello);
 
-### 🗕 Day 12 – Arrays
-
-**1. What is Array?**  
-An Array is a data structure that can hold multiple values of same or different types.
-
-**2. How to Declare Arrays?**
-```js
-let arr = [1, 2, 3];        // Using literals
-let arr2 = new Array(3);    // Using constructor
-```
-
-**3. Array Methods**
-
-| No. | Method          | Description                                           | Syntax                         |
-|-----|------------------|-------------------------------------------------------|--------------------------------|
-|  1  | push()           | Adds element at the end                               | arr.push(value)                |
-|  2  | pop()            | Removes last element                                  | arr.pop()                      |
-|  3  | unshift()        | Adds element at the beginning                         | arr.unshift(value)             |
-|  4  | shift()          | Removes first element                                 | arr.shift()                    |
-|  5  | splice()         | Adds/Removes items                                    | arr.splice(start, deleteCount, item1, ...) |
-|  6  | slice()          | Returns a portion of the array                        | arr.slice(start, end)          |
-|  7  | indexOf()        | Returns first index of element                        | arr.indexOf(value)             |
-|  8  | lastIndexOf()    | Returns last index of element                         | arr.lastIndexOf(value)         |
-|  9  | includes()       | Checks if value exists                                | arr.includes(value)            |
-| 10  | join()           | Joins all elements into string                        | arr.join(separator)            |
-| 11  | reverse()        | Reverses the array                                    | arr.reverse()                  |
-| 12  | sort()           | Sorts elements                                        | arr.sort()                     |
-| 13  | concat()         | Merges two arrays                                     | arr1.concat(arr2)              |
-| 14  | flat()           | Flattens nested arrays                                | arr.flat(depth)                |
+| No. | Method                    | Syntax                        |
+|-----|---------------------------|-------------------------------|
+|  1  | toLowerCase()             | str.toLowerCase()             |
+|  2  | toUpperCase()             | str.toUpperCase()             |
+|  3  | charAt(index)             | str.charAt(index)             |
+|  4  | charCodeAt(index)         | str.charCodeAt(index)         |
+|  5  | startsWith("text")        | str.startsWith("text")        |
+|  6  | endsWith("text")          | str.endsWith("text")          |
+|  7  | padStart(length, char)    | str.padStart(length, "char")  |
+|  8  | padEnd(length, char)      | str.padEnd(length, "char")    |
+|  9  | indexOf("char")           | str.indexOf("char")           |
+| 10  | replace("a", "b")         | str.replace("a", "b")         |
+| 11  | replaceAll("a", "b")      | str.replaceAll("a", "b")      |
+| 12  | replace(/pattern/g, "b")  | str.replace(/pattern/g, "b")  |
+| 13  | includes("text")          | str.includes("text")          |
 
