@@ -207,7 +207,7 @@ let arr2 = new Array(3);    // Using constructor
 | 13  | concat()         | Merges two arrays                                     | arr1.concat(arr2)              |
 | 14  | flat()           | Flattens nested arrays                                | arr.flat(depth)                |
 
-
+---
 ### 📅 Day 14 – Array Methods Overview
 
 | 🔢 Method Name | 🧪 Syntax                                                                  | 🎯 Use                                                   | 🔁 Returns Something | 📦 Return Value      | ♻️ Modifies Original Array |
