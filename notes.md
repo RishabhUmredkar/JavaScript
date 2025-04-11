@@ -208,6 +208,7 @@ let arr2 = new Array(3);    // Using constructor
 | 14  | flat()           | Flattens nested arrays                                | arr.flat(depth)                |
 
 ---
+
 ### 📅 Day 14 – Array Methods Overview
 
 | 🔢 Method Name | 🧪 Syntax                                                                  | 🎯 Use                                                   | 🔁 Returns Something | 📦 Return Value      | ♻️ Modifies Original Array |
