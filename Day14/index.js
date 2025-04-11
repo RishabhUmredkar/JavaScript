@@ -70,3 +70,12 @@ method.push(100);  // add element at the end of array
 // method.unshift(200); // add element at the beginning of array
 // method.shift(); // remove first element of array
 console.log(method);
+
+delete method[0]; // delete element at index 0
+console.log(method.indexOf(20)); // find index of element 20
+console.log(method.includes(20)); // check if element 20 is present in array
+console.log(method.length); // length of array
+console.log(method.lastIndexOf); // last index of element in array
+console.log(method.toString()); // convert array to string
+console.log(method.at(0)); // get element at index 0
+console.log(method.slice(0, 3)); // get elements from index 0 to 2
