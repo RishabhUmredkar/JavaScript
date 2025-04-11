@@ -275,3 +275,49 @@ Declaration of String
 Day 12 
 Arrays
       We can store any type of data in an single array.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 14
+
+filter : IT is used to get the data and the data can be multiple.
+find : I is used to get the data but guve give only one matching data.
+
+
+Method Name    |        Syntax                            |              Use                     |     Does it return something      |     What it return    |     Does it modifies original array     |
+1. Map()       | arr.map((val,arr)=>{})                   |       Iterate over the array element |            Yes                    |   updated Array       |               No                        |
+               |                                          |       and get updated array          |                                   |                       |                                         |      
+               |                                          |                                      |                                   |                       |                                         |          
+2.Filter()     |let array = arr.filter((val,i,arr) =>     |       Filter an Array                |            Yes                    |      Filterd Array    |              No                         |       
+               | { return "condition"})                   |                                      |                                   |                       |                                         |       
+               |                                          |                                      |                                   |                       |                                         |     
+3. reduce()    |let rElement = arr.reduce(acc,val,i,arr)=>|        to get single value through   |            Yes                    |     Single value      |                No                       |
+               |{ return acc}                             |        complete array                |                                   |                       |                                         |
+            
+
+
+
+| 🔢 Method Name | 🧪 Syntax                                                               | 🎯 Use                                                   | 🔁 Returns Something | 📦 Return Value      | ♻️ Modifies Original Array |
+|---------------|---------------------------------------------------------------------------|----------------------------------------------------------|----------------------|---------------------- -|-----------------------------|
+| **map()**     | `arr.map((val, i, arr) => { return val })`                                | Creates a new array by applying a function to each item  | ✅ Yes               | 🆕 New Array          | ❌ No                      |
+| **filter()**  | `arr.filter((val, i, arr) => condition)`                                  | Filters elements based on condition                      | ✅ Yes               | 🧹 Filtered Array     | ❌ No                      |
+| **reduce()**  | `arr.reduce((acc, val, i, arr) => acc + val, initialValue)`               | Reduces array to a single value                          | ✅ Yes               | 🔢 Single Value       | ❌ No                      |
+| **sort()**    | `arr.sort((a, b) => b - a)`                                               | Sorts array (e.g., descending order using b - a)         | ✅ Yes               | 🆕 Sorted Array       | ✅ Yes                     |
+| **forEach()** | `arr.forEach((val, i, arr) => { console.log(val) })`                      | Iterates over array without returning a new array        | ❌ No                | ❌ Undefined          | ❌ No                      |
+| **reverse()** | `arr.reverse()`                                                           | Reverses the array in-place                              | ✅ Yes               | 🔄 Reversed Array     | ✅ Yes                     |
+
+
+
+
+// foreach
+1. i of foreach --> "of" is used to get the value
+2. i in foreach --> "in" is used to get the index
+
+let foreach = [50, 20, 10, 30, 40, 60];
+for (const i of foreach)
+{
+        console.log(i);
+}
