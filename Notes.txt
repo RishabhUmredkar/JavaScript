@@ -281,6 +281,30 @@ Arrays
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
+Day 13
+
+forEach
+
+
+//ForEach Method
+// The forEach() method executes a provided function once for each array element.
+
+let coding = ["JS","HTML","CSS","React","NodeJS","ExpressJS"];
+let values = coding.forEach((val)=>{
+    console.log(val);
+    return val;
+})
+// console.log(values);   It will return undefined because forEach does not return anything.
+
+// console.log(values);   It will return undefined because forEach does not return anything.
+/**
+ * forEach() method is used to execute a function on each element of an array.
+ * It does not return anything.
+ * It is used to iterate over an array and perform some operation on each element.
+ */
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
 Day 14
 
 filter : IT is used to get the data and the data can be multiple.

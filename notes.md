@@ -209,6 +209,132 @@ let arr2 = new Array(3);    // Using constructor
 
 ---
 
+
+
+
+# 🌟 Day 13 - JavaScript Array Methods
+
+Today’s focus: mastering common array methods for data handling.
+
+---
+
+## 🔁 1. `forEach()`
+Used for looping through elements.
+
+```js
+["JS", "HTML", "CSS"].forEach(val => console.log(val));
+```
+
+🧠 Doesn’t return anything.
+
+---
+
+## 🔍 2. `filter()`
+Returns elements that match a condition.
+
+```js
+[10, 20, 30, 40].filter(num => num <= 30); // [10, 20, 30]
+```
+
+---
+
+## ➕ 3. `reduce()`
+Combines all values into one (like sum).
+
+```js
+[10, 20, 30].reduce((acc, val) => acc + val, 0); // 60
+```
+
+---
+
+## 🔄 4. `map()`
+Transforms elements.
+
+```js
+[1, 2, 3].map(x => x * 2); // [2, 4, 6]
+```
+
+---
+
+## 🔎 5. `find()`
+Gets the first matching item.
+
+```js
+[10, 20, 30, 40].find(val => val > 25); // 30
+```
+
+---
+
+## 🔃 6. `sort()`, `reverse()`
+
+```js
+[3, 1, 2].sort();        // [1, 2, 3]
+[3, 1, 2].reverse();     // [2, 1, 3]
+```
+
+---
+
+## 🔁 7. `for...of` Loop
+
+```js
+for (const val of [1, 2, 3]) console.log(val);
+```
+
+---
+
+## 🛠️ 8. Modify Arrays
+
+```js
+let arr = [10];
+arr.push(20);  // Add end
+arr.pop();     // Remove end
+arr.unshift(5); // Add start
+arr.shift();    // Remove start
+```
+
+---
+
+## 🧰 9. Other Methods
+
+```js
+arr.includes(10); arr.indexOf(20);
+arr.slice(0, 2); arr.toString();
+arr.at(0);
+```
+
+---
+
+## 📦 10. Nested Data
+
+```js
+let userData = [[{ id: 1, first_name: "Fitz", gender: "Male" }, ...]];
+```
+
+---
+
+## 🚀 Mini Challenges
+
+1. Use `filter()` to get only female users.
+2. Use `map()` to list full names.
+3. Use `reduce()` to count users.
+4. Use `find()` to get first Male user.
+
+---
+
+## ✅ Summary
+
+| Method      | Use              |
+|-------------|------------------|
+| forEach     | Loop             |
+| filter      | Condition-based  |
+| reduce      | Aggregation      |
+| map         | Modify           |
+| find        | First match      |
+| sort/reverse| Order/flip       |
+| push/pop    | Modify ends      |
+
+----
+
 ### 📅 Day 14 – Array Methods Overview
 
 | 🔢 Method Name | 🧪 Syntax                                                                  | 🎯 Use                                                   | 🔁 Returns Something | 📦 Return Value      | ♻️ Modifies Original Array |
