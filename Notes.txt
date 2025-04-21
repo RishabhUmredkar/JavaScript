@@ -345,3 +345,62 @@ for (const i of foreach)
 {
         console.log(i);
 }
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 15
+
+1.    slice syntax : arr.slice(start index, last index) 
+            it will not modify the original array
+                   extracting upto the last undex and the last index will not be taken into cosideration.
+
+2.    splice syntax : arr.splice(start index, length, element that as to be replaced at the place if extractedindexes (n no f element can be replaced))
+
+3.    let str2 = Array.from("Terminator"); we can create a array from iterable data
+
+
+array methods 
+1. map : it is iterate over the array.
+2.filter : if the condition is satisfy then it will return expected value
+3. reduce : extract the element 
+4. find : 
+5. sort
+6. reverse 
+7. forEach
+8. forin
+9. forof
+10. push : add the element in last
+11. pop : remove the element from last
+12. shift : remove the element from first
+13. unshift : add the element from first
+14. indexOf
+15. lastIndexOf 
+16. at
+17. slice
+18. splice
+19. join
+20. Array.from
+
+
+| 🔢 Method Name   | 🧪 Syntax                                      | 🎯 Use                                                                 | 🔁 Returns Something | 📦 Return Value         | ♻️ Modifies Original Array |
+|------------------|-----------------------------------------------|------------------------------------------------------------------------|----------------------|--------------------------|-----------------------------|
+| **map()**        | `arr.map((val, i, arr) => { return val })`    | Creates a new array by applying a function to each item                | ✅ Yes               | 🆕 New Array            | ❌ No                      |
+| **filter()**     | `arr.filter((val, i, arr) => condition)`      | Filters elements based on a condition                                 | ✅ Yes               | 🧹 Filtered Array       | ❌ No                      |
+| **reduce()**     | `arr.reduce((acc, val, i, arr) => acc + val)` | Reduces the array to a single value by applying a function             | ✅ Yes               | 🔢 Single Value         | ❌ No                      |
+| **find()**       | `arr.find((val, i, arr) => condition)`        | Finds the first element that satisfies the condition                   | ✅ Yes               | 🎯 First Matching Value | ❌ No                      |
+| **sort()**       | `arr.sort((a, b) => a - b)`                   | Sorts the array in ascending or descending order                       | ✅ Yes               | 🆕 Sorted Array         | ✅ Yes                     |
+| **reverse()**    | `arr.reverse()`                               | Reverses the array in place                                            | ✅ Yes               | 🔄 Reversed Array       | ✅ Yes                     |
+| **forEach()**    | `arr.forEach((val, i, arr) => { console.log(val) })` | Iterates over the array without returning a new array                  | ❌ No                | ❌ Undefined            | ❌ No                      |
+| **push()**       | `arr.push(element)`                           | Adds one or more elements to the end of the array                      | ✅ Yes               | 🔢 New Length of Array  | ✅ Yes                     |
+| **pop()**        | `arr.pop()`                                   | Removes the last element from the array                                | ✅ Yes               | 🎯 Removed Element      | ✅ Yes                     |
+| **shift()**      | `arr.shift()`                                 | Removes the first element from the array                               | ✅ Yes               | 🎯 Removed Element      | ✅ Yes                     |
+| **unshift()**    | `arr.unshift(element)`                        | Adds one or more elements to the beginning of the array                | ✅ Yes               | 🔢 New Length of Array  | ✅ Yes                     |
+| **indexOf()**    | `arr.indexOf(element)`                        | Returns the first index of the specified element                       | ✅ Yes               | 🔢 Index or -1          | ❌ No                      |
+| **lastIndexOf()**| `arr.lastIndexOf(element)`                    | Returns the last index of the specified element                        | ✅ Yes               | 🔢 Index or -1          | ❌ No                      |
+| **at()**         | `arr.at(index)`                               | Returns the element at the specified index (supports negative indices) | ✅ Yes               | 🎯 Element              | ❌ No                      |
+| **slice()**      | `arr.slice(start, end)`                       | Extracts a portion of the array without modifying the original array    | ✅ Yes               | 🆕 New Array            | ❌ No                      |
+| **splice()**     | `arr.splice(start, deleteCount, ...items)`    | Adds/removes elements from the array                                   | ✅ Yes               | 🆕 Modified Array       | ✅ Yes                     |
+| **join()**       | `arr.join(separator)`                         | Joins all elements of the array into a string                          | ✅ Yes               | 📝 String               | ❌ No                      |
+| **Array.from()** | `Array.from(iterable)`                        | Creates a new array from an iterable object                            | ✅ Yes               | 🆕 New Array            | ❌ No                      |
