@@ -38,7 +38,8 @@ console.log(arr1);
 let arr2 = arr.reduce((acc, val) => {
     return acc + val;
 }, 0);
-console.log(arr2);
+console.log(arr2);     
+
 
 //USE MAP METHOD
 let arr3 = arr.map((val) => {

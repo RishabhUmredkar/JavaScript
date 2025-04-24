@@ -4,7 +4,7 @@ console.log(arr.slice(1,3));
 
 // console.log(arr[50]); //undefined
 
-console.log(arr.splice(2,3,100,454,1,544,65,1,3,54,45,45,8,3));
+console.log(arr.splice(0,0,100,454,1,544,65,1,3,54,45,45,8,3));
 
 console.log(arr);
 
@@ -17,7 +17,13 @@ let str2 = Array.from("Terminator");
 console.log(str2); // ["T", "e", "r", "m", "i", "n", "a", "t", "o", "r"]
 
 // concat
-arr = [1,2,3];
+arr = [1,9,3,4,3,5,3,1,5,1,54,8,6];
 arr2 = [4,5,6];
 arr3 = arr.concat(arr2);
 console.log(arr3); // [1, 2, 3, 4, 5, 6]
+
+
+
+arr.sort();
+console.log(arr);
+console.log(arr.slice(4,arr.length))
