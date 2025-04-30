@@ -40,8 +40,7 @@
 - Types: Keyword, Identifier, Operator, Separator, Literal  
 
 **Datatypes (8 total):**  
-1. Number  2. Boolean  3. String  4. Symbol  
-5. Null    6. Undefined  7. NaN   8. BigInt  
+1. Number  2. Boolean  3. String  4. Symbol 5. Null    6. Undefined  7. NaN   8. BigInt  
 
 **String Declaration:**  
 - Single quotes `''`, Double quotes `""`, Backticks ``` ```
