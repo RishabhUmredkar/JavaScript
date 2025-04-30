@@ -419,3 +419,746 @@ console.log(str2); // ['T', 'e', 'r', 'm', 'i', 'n', 'a', 't', 'o', 'r']
 | **splice()**     | `arr.splice(start, deleteCount, ...items)`    | Adds/removes elements from the array                                   | ✅ Yes               | 🆕 Modified Array       | ✅ Yes                     |
 | **join()**       | `arr.join(separator)`                         | Joins all elements of the array into a string                          | ✅ Yes               | 📝 String               | ❌ No                      |
 | **Array.from()** | `Array.from(iterable)`                        | Creates a new array from an iterable object                            | ✅ Yes               | 🆕 New Array            | ❌ No                      |
+
+
+
+
+---
+
+
+### 📅  Day 16 – Objects in JavaScript
+
+**What is an Object?**  
+An object is a real-world entity that represents properties (attributes) and behaviors (methods). Objects in JavaScript can also contain other objects, enabling nested structures.
+
+
+#### 🛠️ Ways to Create an Object
+
+1. **Using Object Literals:**
+   ```js
+   let obj = {
+       key: value
+   };
+   ```
+
+2. **Using `new Object()`:**
+   ```js
+   let obj = new Object();
+   obj.key = value;
+   ```
+
+3. **Using Classes or Constructor Functions:**
+   ```js
+   class Person {
+       constructor(name, age) {
+           this.name = name;
+           this.age = age;
+       }
+   }
+   let person = new Person("Rishabh", 22);
+   ```
+
+4. **Using `Object.create()`:**
+   ```js
+   let obj = Object.create(null);
+   obj.key = value;
+   ```
+
+---
+
+#### 🧩 Nested Objects
+
+Objects can contain other objects as properties.  
+Example:
+```js
+let person = {
+    name: "Rishabh",
+    age: 22,
+    address: {
+        city: "Nagpur",
+        pincode: 440018,
+        state: "Maharashtra"
+    }
+};
+console.log(person.address.city); // Output: Nagpur
+```
+
+---
+
+#### 🔄 CRUD Operations on Objects
+
+1. **Create:**
+   ```js
+   let car = {
+       name: "Maruti 800",
+       brand: "Maruti Suzuki",
+       price: 80000
+   };
+   ```
+
+2. **Read:**
+   ```js
+   console.log(car.name); // Output: Maruti 800
+   ```
+
+3. **Update:**
+   ```js
+   car.price = 85000; // Updates the price
+   ```
+
+4. **Delete:**
+   ```js
+   delete car.price; // Removes the price property
+   ```
+
+---
+
+#### 📋 Object Methods
+
+1. **`Object.keys(obj)`** – Returns an array of keys.
+   ```js
+   console.log(Object.keys(car)); // ["name", "brand"]
+   ```
+
+2. **`Object.values(obj)`** – Returns an array of values.
+   ```js
+   console.log(Object.values(car)); // ["Maruti 800", "Maruti Suzuki"]
+   ```
+
+3. **`Object.entries(obj)`** – Returns an array of key-value pairs.
+   ```js
+   console.log(Object.entries(car)); // [["name", "Maruti 800"], ["brand", "Maruti Suzuki"]]
+   ```
+
+4. **`Object.fromEntries(arr)`** – Converts an array of key-value pairs back to an object.
+   ```js
+   let arr = [["name", "Maruti 800"], ["brand", "Maruti Suzuki"]];
+   console.log(Object.fromEntries(arr)); // { name: "Maruti 800", brand: "Maruti Suzuki" }
+   ```
+
+---
+
+#### 🧠 `this` Keyword in Objects
+
+- **Regular Function:**
+   ```js
+   let obj = {
+       fun: function() {
+           console.log(this); // Refers to the object
+       }
+   };
+   obj.fun();
+   ```
+
+- **Arrow Function:**
+   ```js
+   let obj = {
+       fun: () => {
+           console.log(this); // Refers to the global object
+       }
+   };
+   obj.fun();
+   ```
+
+---
+
+#### 🔗 Call, Apply, and Bind Methods
+
+1. **`call()`** – Calls a function with a given `this` value and arguments.
+   ```js
+   function greet(greeting) {
+       console.log(`${greeting}, ${this.name}`);
+   }
+   let person = { name: "Rishabh" };
+   greet.call(person, "Hello"); // Output: Hello, Rishabh
+   ```
+
+2. **`apply()`** – Similar to `call()`, but arguments are passed as an array.
+   ```js
+   greet.apply(person, ["Hi"]); // Output: Hi, Rishabh
+   ```
+
+3. **`bind()`** – Returns a new function with `this` bound to the specified object.
+   ```js
+   let boundGreet = greet.bind(person);
+   boundGreet("Hey"); // Output: Hey, Rishabh
+   ```
+
+---
+
+#### 🧑‍💻 Example: Nested Object with Methods
+
+```js
+let student = {
+    name: "Rishabh",
+    age: 22,
+    hobbies: ["Cycling", "Gym"],
+    education: {
+        degree: "B.Tech",
+        stream: "CSE",
+        college: {
+            name: "KDK College",
+            city: "Nagpur"
+        }
+    },
+    greet: function() {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+};
+student.greet(); // Output: Hello, my name is Rishabh
+console.log(student.education.college.city); // Output: Nagpur
+```
+
+---
+#### 📝 Questions for Practice with Answers
+
+1. **What are the different ways to create an object in JavaScript?**  
+   - Using Object Literals:  
+     ```js
+     let obj = { key: value };
+     ```
+   - Using `new Object()`:  
+     ```js
+     let obj = new Object();
+     obj.key = value;
+     ```
+   
+   - Using `Object.create()`:  
+     ```js
+     let obj = Object.create(null);
+     obj.key = value;
+     ```
+
+2. **How can you perform CRUD operations on an object?**  
+   - **Create:**  
+     ```js
+     let car = { name: "Maruti 800", brand: "Maruti Suzuki", price: 80000 };
+     ```
+   - **Read:**  
+     ```js
+     console.log(car.name); // Output: Maruti 800
+     ```
+   - **Update:**  
+     ```js
+     car.price = 85000; // Updates the price
+     ```
+   - **Delete:**  
+     ```js
+     delete car.price; // Removes the price property
+     ```
+
+3. **What is the difference between `Object.keys()` and `Object.entries()`?**  
+   - `Object.keys(obj)` returns an array of the object's keys.  
+     Example:  
+     ```js
+     let car = { name: "Maruti 800", brand: "Maruti Suzuki" };
+     console.log(Object.keys(car)); // ["name", "brand"]
+     ```
+   - `Object.entries(obj)` returns an array of key-value pairs.  
+     Example:  
+     ```js
+     console.log(Object.entries(car)); // [["name", "Maruti 800"], ["brand", "Maruti Suzuki"]]
+     ```
+
+4. **Explain the behavior of the `this` keyword in regular and arrow functions.**  
+   - In **regular functions**, `this` refers to the object that calls the function.  
+     Example:  
+     ```js
+     let obj = {
+         fun: function() {
+             console.log(this); // Refers to the object
+         }
+     };
+     obj.fun();
+     ```
+   - In **arrow functions**, `this` refers to the surrounding lexical scope (usually the global object).  
+     Example:  
+     ```js
+     let obj = {
+         fun: () => {
+             console.log(this); // Refers to the global object
+         }
+     };
+     obj.fun();
+     ```
+
+5. **Write an example using `call`, `apply`, and `bind` methods.**  
+   - **`call()`**:  
+     ```js
+     function greet(greeting) {
+         console.log(`${greeting}, ${this.name}`);
+     }
+     let person = { name: "Rishabh" };
+     greet.call(person, "Hello"); // Output: Hello, Rishabh
+     ```
+   - **`apply()`**:  
+     ```js
+     greet.apply(person, ["Hi"]); // Output: Hi, Rishabh
+     ```
+   - **`bind()`**:  
+     ```js
+     let boundGreet = greet.bind(person);
+     boundGreet("Hey"); // Output: Hey, Rishabh
+     ```
+
+---
+
+#### ✅ Summary
+
+- Objects can be created using literals, constructors, classes, or `Object.create()`.
+- CRUD operations include creating, reading, updating, and deleting object properties.
+- `Object.keys()` returns an array of keys, while `Object.entries()` returns key-value pairs.
+- The `this` keyword behaves differently in regular and arrow functions.
+- `call`, `apply`, and `bind` are used to control the `this` context of a function.
+
+| Method                | Description                                      |
+|-----------------------|--------------------------------------------------|
+| `Object.keys(obj)`    | Returns an array of keys                         |
+| `Object.values(obj)`  | Returns an array of values                       |
+| `Object.entries(obj)` | Returns an array of key-value pairs              |
+| `Object.fromEntries()`| Converts key-value pairs array to an object      |
+| `call()`              | Calls a function with a specific `this` context |
+| `apply()`             | Similar to `call()`, but arguments are in array |
+| `bind()`              | Returns a new function with bound `this`        |
+
+
+
+
+---
+
+### 📅 Day 17 – Destructuring in JavaScript
+
+**What is Destructuring?**  
+Destructuring is a convenient way of extracting values from objects or arrays and assigning them to variables. It simplifies the process of accessing and using data.
+
+#### 🧩 Destructuring Objects
+
+**Example:**
+```js
+let student = {
+   name: "Rishabh",
+   age: 22,
+   address: "Nagpur",
+   hobbies: ["Reading", "Travelling"]
+};
+
+// Accessing properties without destructuring
+console.log(student.name); // Rishabh
+console.log(student.age);  // 22
+
+// Using destructuring
+let { name, age, address } = student;
+console.log(name);    // Rishabh
+console.log(age);     // 22
+console.log(address); // Nagpur
+```
+
+**Nested Object Destructuring:**
+```js
+let backPack = {
+   item1: "Camera",
+   item2: "Tiffin",
+   item3: "Charger",
+   myStuff: {
+      myitem1: "Blanket",
+      myitem2: "Towel",
+      myitem3: "Socks",
+      myitem4: "Shampoo"
+   }
+};
+
+// Destructuring nested objects
+let { item1, item2, item3, myStuff: { myitem1, myitem2 } } = backPack;
+console.log(item1);   // Camera
+console.log(myitem1); // Blanket
+console.log(myitem2); // Towel
+```
+
+---
+
+#### 🧩 Destructuring Arrays
+
+**Example:**
+```js
+let fruits = ["Apple", "Banana", "Cherry"];
+
+// Accessing elements without destructuring
+console.log(fruits[0]); // Apple
+
+// Using destructuring
+let [fruit1, fruit2, fruit3] = fruits;
+console.log(fruit1); // Apple
+console.log(fruit2); // Banana
+console.log(fruit3); // Cherry
+```
+
+**Skipping Elements:**
+```js
+let colors = ["Red", "Green", "Blue"];
+let [, secondColor] = colors; // Skipping the first element
+console.log(secondColor); // Green
+```
+
+---
+
+#### 🔗 Call, Apply, and Bind with `this`
+
+**1. `call()` Method:**  
+Calls a function with a specific `this` context and arguments passed individually.
+```js
+function collectFees(fees) {
+   console.log(`${this.name} has paid ${fees} fees`);
+}
+
+let student = { name: "Rishabh" };
+collectFees.call(student, 1000); // Rishabh has paid 1000 fees
+```
+
+**2. `apply()` Method:**  
+Similar to `call()`, but arguments are passed as an array.
+```js
+collectFees.apply(student, [1000]); // Rishabh has paid 1000 fees
+```
+
+**3. `bind()` Method:**  
+Returns a new function with `this` bound to the specified object.
+```js
+let bindFunc = collectFees.bind(student, 5000);
+bindFunc(); // Rishabh has paid 5000 fees
+```
+
+---
+
+#### 📝 Questions for Practice with Answers
+
+1. **What is destructuring in JavaScript?**  
+   Destructuring is a syntax that allows you to unpack values from arrays or properties from objects into distinct variables.
+
+2. **How do you destructure an object?**  
+   Example:
+   ```js
+   let obj = { a: 1, b: 2 };
+   let { a, b } = obj;
+   console.log(a, b); // 1, 2
+   ```
+
+3. **How do you destructure a nested object?**  
+   Example:
+   ```js
+   let obj = { a: { b: 2 } };
+   let { a: { b } } = obj;
+   console.log(b); // 2
+   ```
+
+4. **What is the difference between `call`, `apply`, and `bind`?**  
+   - `call`: Invokes a function with a specific `this` and arguments passed individually.  
+   - `apply`: Similar to `call`, but arguments are passed as an array.  
+   - `bind`: Returns a new function with `this` bound to the specified object.
+
+5. **Write an example using `bind` to create a new function.**  
+   ```js
+   function greet(greeting) {
+      console.log(`${greeting}, ${this.name}`);
+   }
+   let person = { name: "Rishabh" };
+   let boundGreet = greet.bind(person, "Hello");
+   boundGreet(); // Hello, Rishabh
+   ```
+
+---
+
+#### ✅ Summary
+
+- **Destructuring** simplifies extracting values from objects and arrays.
+- **Object Destructuring** allows unpacking properties into variables.
+- **Array Destructuring** allows unpacking elements into variables.
+- **Call, Apply, and Bind** are used to control the `this` context of a function.
+
+| Method      | Description                                      | Syntax Example                              |
+|-------------|--------------------------------------------------|--------------------------------------------|
+| `call()`    | Calls a function with specific `this` and args   | `func.call(obj, arg1, arg2)`               |
+| `apply()`   | Calls a function with specific `this` and args   | `func.apply(obj, [arg1, arg2])`            |
+| `bind()`    | Returns a new function with bound `this`         | `let newFunc = func.bind(obj, arg1, arg2)` |
+
+- Destructuring is especially useful for working with APIs or nested data structures.
+
+
+
+----
+### 📅 Day 18 – Rest and Spread Operators
+
+#### 🧩 Rest and Spread Operators Overview
+
+- **Rest (`...`)**: Collects multiple elements into a single container (e.g., array or object).  
+- **Spread (`...`)**: Spreads elements from an array or object into individual elements.
+
+| **Operator** | **LHS (Rest)**                     | **RHS (Spread)**                  |
+|--------------|------------------------------------|------------------------------------|
+| `...`        | Collects remaining elements        | Spreads elements into individual items |
+
+---
+
+#### 🧠 Destructuring with Rest and Spread
+
+**1. Object Destructuring:**
+Extracting values from objects and assigning them to variables.
+
+```js
+let backPack = {
+   item1: "Camera",
+   item2: "Tiffin",
+   item3: "Charger",
+   myStuff: {
+      myitem1: "Blanket",
+      myitem2: "Towel",
+      myitem3: "Socks",
+      myitem4: "Shampoo"
+   }
+};
+
+// Accessing properties directly
+console.log(backPack.item1); // Camera
+
+// Destructuring
+let { item1, item2, item3 } = backPack;
+console.log(item1); // Camera
+console.log(item2); // Tiffin
+console.log(item3); // Charger
+
+// Accessing nested properties
+console.log(backPack.myStuff.myitem1); // Blanket
+```
+
+---
+
+**2. Array Destructuring:**
+Extracting values from arrays and assigning them to variables.
+
+```js
+let backPack2 = ["Tent", "Compass", "Torch", "Rope", "Lighter", ["X", "Y", "Z"]];
+
+// Destructuring with skipping elements
+let [a, b, , , c, [p, , r]] = backPack2;
+console.log(a); // Tent
+console.log(b); // Compass
+console.log(c); // Lighter
+console.log(p); // X
+console.log(r); // Z
+```
+
+---
+
+#### 🔄 Rest Operator
+
+The **Rest Operator** collects the remaining elements into a single container (e.g., array).
+
+```js
+let backPack3 = ["Tent", "Compass", "Torch", "Rope", "Lighter", "Tshirt", "Pants", "Towel"];
+
+// Using Rest to collect remaining elements
+let [g, h, i, ...cloths] = backPack3;
+console.log(cloths); // ["Rope", "Lighter", "Tshirt", "Pants", "Towel"]
+```
+
+**Rest in Functions:**
+The **Rest Operator** can collect all arguments into a single array.
+
+```js
+let add = (...container) => {
+   // All arguments are stored in the `container` array
+   console.log(container); // [1000, 2000, 3000, 4000, 1000]
+   let addition = container.reduce((acc, amt) => acc + amt, 5000);
+   console.log(addition); // 16000
+};
+add(1000, 2000, 3000, 4000, 1000);
+```
+
+---
+
+#### 🔄 Spread Operator
+
+The **Spread Operator** spreads elements from an array or object into individual items.
+
+```js
+let backPack3 = ["Tent", "Compass", "Torch", "Rope", "Lighter", "Tshirt", "Pants", "Towel"];
+
+// Using Spread to expand elements
+console.log(...backPack3); // Tent Compass Torch Rope Lighter Tshirt Pants Towel
+```
+
+**Combining Arrays with Spread:**
+```js
+let arr1 = [10, 20, 30];
+let arr2 = [40, 10, 30];
+let newArr = [...arr1, ...arr2];
+console.log(newArr); // [10, 20, 30, 40, 10, 30]
+```
+
+---
+
+#### 📝 Questions for Practice with Answers
+
+1. **What is the difference between Rest and Spread operators?**  
+   - **Rest (`...`)**: Collects multiple elements into a single container (e.g., array or object).  
+   - **Spread (`...`)**: Spreads elements from an array or object into individual elements.
+
+2. **How can you use the Rest operator in a function?**  
+   Example:
+   ```js
+   let multiply = (...nums) => nums.reduce((acc, num) => acc * num, 1);
+   console.log(multiply(2, 3, 4)); // 24
+   ```
+
+3. **How can you combine two arrays using the Spread operator?**  
+   Example:
+   ```js
+   let arr1 = [1, 2, 3];
+   let arr2 = [4, 5, 6];
+   let combined = [...arr1, ...arr2];
+   console.log(combined); // [1, 2, 3, 4, 5, 6]
+   ```
+
+4. **What happens if you use Rest in array destructuring?**  
+   Example:
+   ```js
+   let arr = [1, 2, 3, 4, 5];
+   let [first, second, ...rest] = arr;
+   console.log(rest); // [3, 4, 5]
+   ```
+
+5. **Write a function that uses Rest to calculate the sum of all arguments.**  
+   Example:
+   ```js
+   let sum = (...nums) => nums.reduce((acc, num) => acc + num, 0);
+   console.log(sum(1, 2, 3, 4)); // 10
+   ```
+
+---
+
+#### ✅ Summary
+
+| **Operator** | **Use**                                                                 |
+|--------------|-------------------------------------------------------------------------|
+| **Rest**     | Collects multiple elements into a single container (e.g., array/object) |
+| **Spread**   | Spreads elements from an array or object into individual items          |
+
+| **Scenario**           | **Example**                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **Rest in Arrays**      | `let [a, ...rest] = [1, 2, 3];` ➔ `rest = [2, 3]`                          |
+| **Rest in Functions**   | `let sum = (...nums) => nums.reduce((a, b) => a + b);`                     |
+| **Spread in Arrays**    | `let arr = [...arr1, ...arr2];` ➔ Combines two arrays                      |
+| **Spread in Objects**   | `let obj = { ...obj1, ...obj2 };` ➔ Combines two objects                   |
+
+- **Rest** is used to collect remaining elements.  
+- **Spread** is used to expand elements.  
+- Both are powerful tools for working with arrays, objects, and functions.
+
+----
+
+
+### 📅 Day 19 – Rest, Spread, and JSON in JavaScript
+
+#### 🧩 Rest and Spread Operators
+
+**Rest (`...`)**: Collects multiple elements into a single container (e.g., array or object).  
+**Spread (`...`)**: Spreads elements from an array or object into individual items.
+
+---
+
+#### 🔄 Using Spread to Merge Objects
+
+```js
+let student = { name: "Rishabh", age: 23 };
+let studentAdd = { city: "Nagpur", state: "Maharashtra", pincode: 440018 };
+
+student = { ...student, ...studentAdd };
+console.log(student);
+```
+
+**Example: Combining Two Objects**
+```js
+const RishabhOBJ1 = { name: "Rishabh", age: 21, school: "Adarsh Vidya Mandir" };
+const RishabhOBJ2 = { age: 22, college: "K.D.K.", mobile: 7418529630 };
+
+const finalRishabh = { ...RishabhOBJ1, ...RishabhOBJ2 };
+console.log(finalRishabh);
+```
+
+---
+
+#### 🧠 JSON (JavaScript Object Notation)
+
+- **JSON.stringify()**: Converts a JavaScript object into a JSON string.  
+- **JSON.parse()**: Converts a JSON string back into a JavaScript object.  
+
+**Example:**
+```js
+let jsonObj = JSON.stringify(finalRishabh);
+console.log(jsonObj);
+
+let jsonObj1 = JSON.parse(jsonObj);
+console.table(jsonObj1);
+```
+
+---
+
+#### 🛠️ Working with JSON Data
+
+**Displaying JSON in a Table:**
+```js
+let jsonObj2 = [
+   { login: "mojombo", id: 1, type: "User" },
+   { login: "defunkt", id: 2, type: "User" },
+   { login: "pjhyett", id: 3, type: "User" }
+];
+
+// Convert JSON to string and back to object for table display
+let jsonString = JSON.stringify(jsonObj2);
+let jsonParsed = JSON.parse(jsonString);
+console.table(jsonParsed);
+```
+
+---
+
+#### 📝 Questions for Practice
+
+1. **What is the difference between Rest and Spread operators?**  
+    - **Rest** collects multiple elements into a single container.  
+    - **Spread** expands elements into individual items.
+
+2. **How can you merge two objects using Spread?**  
+    Example:  
+    ```js
+    let obj1 = { a: 1 };
+    let obj2 = { b: 2 };
+    let merged = { ...obj1, ...obj2 };
+    console.log(merged); // { a: 1, b: 2 }
+    ```
+
+3. **What is the purpose of JSON.stringify and JSON.parse?**  
+    - `JSON.stringify`: Converts an object to a JSON string.  
+    - `JSON.parse`: Converts a JSON string back to an object.
+
+4. **How can you display JSON data in a table format?**  
+    Example:  
+    ```js
+    let jsonData = [{ id: 1, name: "Rishabh" }];
+    let jsonString = JSON.stringify(jsonData);
+    let jsonParsed = JSON.parse(jsonString);
+    console.table(jsonParsed);
+    ```
+
+---
+
+#### ✅ Summary
+
+| **Concept**          | **Description**                                      |
+|-----------------------|------------------------------------------------------|
+| **Rest Operator**     | Collects remaining elements into an array/object     |
+| **Spread Operator**   | Expands elements from an array/object                |
+| **JSON.stringify()**  | Converts an object to a JSON string                  |
+| **JSON.parse()**      | Converts a JSON string back to an object             |
+
+- Rest and Spread simplify working with arrays and objects.  
+- JSON is essential for data exchange and storage.
+

@@ -404,3 +404,104 @@ array methods
 | **splice()**     | `arr.splice(start, deleteCount, ...items)`    | Adds/removes elements from the array                                   | ✅ Yes               | 🆕 Modified Array       | ✅ Yes                     |
 | **join()**       | `arr.join(separator)`                         | Joins all elements of the array into a string                          | ✅ Yes               | 📝 String               | ❌ No                      |
 | **Array.from()** | `Array.from(iterable)`                        | Creates a new array from an iterable object                            | ✅ Yes               | 🆕 New Array            | ❌ No                      |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 16
+Object
+
+let p = new Promise(() =>{})        //way to create Object
+
+Object is an real world entity which represent property and behviour.
+
+We can create Object inside object just like we create educatation object inside person object.
+
+We can perfrom CRUD Operation
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 17
+
+Destructuring
+Extracting values from object and arrays and assigning them to variables
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 18
+
+
+Rest and spread
+
+LHS             RHS
+(Rest)          (Spread)
+...     =       ...
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 19
+Rest and Spread 
+
+
+// We add the student, StudentAdd deails in the student object And we ReInitialize the student object
+// We Use Spread
+ 
+
+
+JSON : It consume very less memory.
+We can say that the keys are present in json object is in String Format.
+
+// javascript object to json by using JSON.stringify
+// jsonObj is in string format
+// Now we convert jsonObj to object by using JSON.parse
+// JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string
+
+
+
+
+
+
+// We cannot display in console.table the Json object directly, so we need to convert it to a string first.
+
+for Example
+
+this is in Json format so we cannot display in Table
+let jsonObj = JSON.stringify(finalRishabh);
+console.log(jsonObj);
+
+
+this is in javascript object format so we can display in Table
+let jsonObj1 = JSON.parse(jsonObj);
+console.table(jsonObj1);
