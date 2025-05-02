@@ -202,3 +202,28 @@ function checAt(leave ,percentage){
 
 checAt.call(student , 5 , 80); // call method
 checAt.call(student1 , 2 , 90); // call method
+
+
+
+obj1 = {
+    name : "Rishabh"
+}
+obj2 = {
+    age : 22
+}
+
+// If want to merge two object in first object then we can use this
+// Object.assign(obj1 , obj2); // it will merge the two objects
+console.log(obj1); // { name: 'Rishabh', age: 22 }
+console.log(obj2); // { age: 22 }
+
+
+// If want to merge two object in withour affecting first object then we can use this
+let newObj = Object.assign({},obj1, obj2);
+console.log(newObj);
+
+
+// If want to merge two object in withour affecting first object then we can use this and add more date by yourself then
+let addObj = Object.assign({add : "Pune"},obj1, obj2);
+console.log(addObj);
+

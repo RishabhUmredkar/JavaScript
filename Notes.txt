@@ -505,3 +505,82 @@ console.log(jsonObj);
 this is in javascript object format so we can display in Table
 let jsonObj1 = JSON.parse(jsonObj);
 console.table(jsonObj1);
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 20
+
+One more Object method i.e assign
+it is used in day 16 
+
+
+
+
+//It is used to check if the property exists in the object or not
+console.log("name" in obj); // true
+
+
+
+
+way to declare object
+let object1 = {}        //object Literal way
+let object2 = new Object(); //Instatiating an Object using Object constructor
+
+
+// Shallow copy and deep copy
+
+Shallow copy means both the object point the same address like newObj point the same address but after copy object will point the same address 
+if we made change any of the object then it will affect into another object
+let copy = newObj; // shallow copy
+
+
+
+deep copy means both the object poiint the different addresses 
+if we made change any of the object then it will not affect into another object
+we can achieve this by..
+
+let a = JSON.stringify(newObj); // convert object to string
+let copy = JSON.parse(a); // convert string to object
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+// Season 1
+vavr let const 
+js engine
+jit interpeter
+token 
+literla 
+function
+String is primitive mutable
+non primitive is immutable
+Function :  types
+call stack : lifo
+ 
+ Problemexpressionit is the time span between variable declaration arrays initialization temporallatent constituteswhat is closure closer expressionjoe Parents property accessyogiboor scoping with the process of finding the variables in weights parade scope parent function scope is part as technical scope and the found variable accessing will be done using closurethis is written statement written statementlanguage programming language you should be very very good with the written statementsthis was all about your season one season 2 season 2is an objectsmethodcoach methodincludesthe includes index of task ofsheep and sheepwithout your speakers method join method they got takena squish strings come in the concept of includes pad stars pad 3 drink start treatment includes cara Calcode at index of last index of snipesupercase 2 lower case contact like ticket length of operator they got string case of thewhich methods and methodsmake the higher notary functionsyou see what I'm net start hereopted in the key valuableremove
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Season 3
+
+Day 21
+
+promise it is n Object. It i s used to achieve asynchronous
+sttus of promise 1. reject 2. resolve 3. pending

@@ -1161,3 +1161,177 @@ console.table(jsonParsed);
 - Rest and Spread simplify working with arrays and objects.  
 - JSON is essential for data exchange and storage.
 
+
+
+---
+
+
+## 📅 Day 20 – Advanced Object Methods and Exception Handling
+
+### 🧩 Object Methods: `assign` and Property Checks
+
+#### 1. **`Object.assign()`**
+The `Object.assign()` method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It returns the target object.
+
+**Example:**
+```js
+let target = { a: 1 };
+let source = { b: 2, c: 3 };
+Object.assign(target, source);
+console.log(target); // { a: 1, b: 2, c: 3 }
+```
+
+---
+
+#### 2. **Checking if a Property Exists**
+You can check if a property exists in an object using the `in` operator.
+
+**Example:**
+```js
+let obj = {
+   name: "Rishabh",
+   age: 22,
+   address: {
+      city: "Nagpur",
+      state: "Maharashtra",
+      pincode: 440018
+   }
+};
+
+console.log("name" in obj); // true
+console.log("name1" in obj); // false
+console.log("city" in obj); // false
+console.log("city" in obj.address); // true
+```
+
+---
+
+### 🛠️ Ways to Declare Objects
+
+1. **Object Literal:**
+   ```js
+   let object1 = {};
+   ```
+
+2. **Using `new Object()`:**
+   ```js
+   let object2 = new Object();
+   ```
+
+3. **Using Classes:**
+   ```js
+   class Demo {
+      constructor(name, age) {
+         this.name = name;
+         this.age = age;
+      }
+   }
+   let obj = new Demo("Rishabh", 22);
+   console.log(obj); // { name: "Rishabh", age: 22 }
+   ```
+
+---
+
+### 🔄 Shallow Copy vs Deep Copy
+
+#### 1. **Shallow Copy**
+A shallow copy means that the new object points to the same memory address as the original object. Changes to one object will affect the other.
+
+**Example:**
+```js
+let newObj = { name: "Rishabh", age: 22 };
+let copy = newObj; // Shallow copy
+copy.mobile = 7418529630;
+console.log(newObj); // { name: "Rishabh", age: 22, mobile: 7418529630 }
+console.log(copy);   // { name: "Rishabh", age: 22, mobile: 7418529630 }
+```
+
+#### 2. **Deep Copy**
+A deep copy creates a completely independent copy of the object. Changes to one object will not affect the other.
+
+**Example:**
+```js
+let newObj = { name: "Rishabh", age: 22 };
+let deepCopy = JSON.parse(JSON.stringify(newObj)); // Deep copy
+deepCopy.mobile = 7418529630;
+console.log(newObj);   // { name: "Rishabh", age: 22 }
+console.log(deepCopy); // { name: "Rishabh", age: 22, mobile: 7418529630 }
+```
+
+---
+
+### 🛠️ Exception Handling in JavaScript
+
+Exception handling is used to handle runtime errors gracefully without crashing the program.
+
+#### **Structure of Exception Handling**
+1. **`try` Block:** Code that may throw an error.
+2. **`catch` Block:** Code to handle the error.
+3. **`finally` Block:** Code that will always execute, regardless of whether an error occurred.
+
+**Example:**
+```js
+console.log("Tinku left home");
+
+try {
+   console.log("Tinku was walking on the road");
+   console.log(abc); // This will throw an error because `abc` is not defined
+   throw new Error("Cycle got punctured");
+} catch (err) {
+   console.log(err); // Handle the error
+} finally {
+   console.log("Tinku reached school");
+}
+```
+
+---
+
+### 📝 Questions for Practice
+
+1. **What is the difference between `Object.assign()` and a shallow copy?**  
+   - `Object.assign()` creates a shallow copy of the object but can also merge multiple objects into one.  
+   - A shallow copy simply points to the same memory address as the original object.
+
+2. **How can you check if a property exists in an object?**  
+   Example:
+   ```js
+   let obj = { name: "Rishabh" };
+   console.log("name" in obj); // true
+   console.log("age" in obj);  // false
+   ```
+
+3. **What is the difference between shallow copy and deep copy?**  
+   - **Shallow Copy:** Both objects share the same memory address. Changes to one affect the other.  
+   - **Deep Copy:** Both objects have different memory addresses. Changes to one do not affect the other.
+
+4. **Write an example of exception handling in JavaScript.**  
+   Example:
+   ```js
+   try {
+      console.log(abc); // Throws an error
+   } catch (err) {
+      console.log("An error occurred:", err.message);
+   } finally {
+      console.log("Execution completed");
+   }
+   ```
+
+5. **What is the purpose of the `finally` block in exception handling?**  
+   The `finally` block contains code that will always execute, regardless of whether an error occurred in the `try` block.
+
+---
+
+### ✅ Summary
+
+| **Concept**               | **Description**                                                                 |
+|----------------------------|-------------------------------------------------------------------------------|
+| **`Object.assign()`**      | Copies properties from one or more source objects to a target object          |
+| **`in` Operator**          | Checks if a property exists in an object                                      |
+| **Shallow Copy**           | Both objects share the same memory address                                    |
+| **Deep Copy**              | Both objects have different memory addresses                                  |
+| **Exception Handling**     | Handles runtime errors using `try`, `catch`, and `finally` blocks             |
+
+- Use `Object.assign()` for merging objects or creating shallow copies.  
+- Use JSON methods for creating deep copies.  
+- Exception handling ensures that your program can recover gracefully from runtime errors.
+
