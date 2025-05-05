@@ -4,6 +4,7 @@ let revarr =[1,2,3,4,5];
 let i = 0;
 let end = revarr.length - 1;
 let temp = 0;
+
 while (i < end) {
     temp = revarr[i];
     revarr[i] = revarr[end];
@@ -56,3 +57,10 @@ if(isPalindrome) {
 
 // Remove duplicates from an array
 let arr1 = [1,2,3,4,5,1,2,3,4,5];
+let uniqueArr = [];
+for(let i = 0; i<arr1.length; i++){
+    if(!uniqueArr.includes(arr1[i])){
+        uniqueArr.push(arr1[i]);
+    }
+}
+console.log(uniqueArr); // [1,2,3,4,5]

@@ -17,7 +17,7 @@
 
 ## 🧠 Backup Class
 
-### 🗅 Day 1 – Introduction to JavaScript
+### 📅 Day 1 – Introduction to JavaScript
 
 **What is JavaScript?**  
 - Scripting Language, High-level, Object-Oriented  
@@ -47,7 +47,7 @@
 
 ---
 
-### 🗅 Day 2 – Variables
+### 📅 Day 2 – Variables
 
 | Variable | Declaration | Initialization | Decl. + Init. | Updation | Redecl. + Reinit. | Default Value            |
 |----------|-------------|----------------|----------------|----------|--------------------|--------------------------|
@@ -65,14 +65,14 @@ console.log(`The sum of ${a1} and ${b} is ${a1 + b}`); // Backticks
 
 ---
 
-### 🗅 Day 3
+### 📅 Day 3
 
 **Lexical Scope:** Accessing the members outside the function.  
 **Closure:** A special memory allocation in the window object.
 
 ---
 
-### 🗅 Day 4 – Functions
+### 📅 Day 4 – Functions
 
 1. `=>` is called fat function / arrow function  
 2. Prime number check example  
@@ -83,7 +83,7 @@ console.log(`The sum of ${a1} and ${b} is ${a1 + b}`); // Backticks
 
 ---
 
-### 🗅 Day 5 – Function Types
+### 📅 Day 5 – Function Types
 
 1. **Arrow Function:** `let func = () => {}`  
 2. **Regular Function:**  
@@ -116,13 +116,13 @@ hof(cbf_function);
 
 ---
 
-### 🗅 Day 6
+### 📅 Day 6
 
 - AST: Abstract Syntax Tree
 
 ---
 
-### 🗅 Day 8 – Hoisting & Temporal Dead Zone
+### 📅 Day 8 – Hoisting & Temporal Dead Zone
 
 1. **Temporal Dead Zone (TDZ):**  
    Time between variable declaration and initialization  
@@ -138,7 +138,7 @@ hof(cbf_function);
 
 ---
 
-### 🗅 Day 9 – Hoisting (Advanced)
+### 📅 Day 9 – Hoisting (Advanced)
 
 1. Regular Function ➔ Hoisted as function  
 2. Arrow Function ➔ Hoisted as variable ➔ Error  
@@ -146,7 +146,7 @@ hof(cbf_function);
 
 ---
 
-### 🗅 Day 11 – Strings
+### 📅 Day 11 – Strings
 
 ** String ***
 
@@ -176,7 +176,7 @@ Declaration of String
 
 ---
 
-### 🗅 Day 12 – Arrays
+### 📅 Day 12 – Arrays
 
 **1. What is Array?**  
 An Array is a data structure that can hold multiple values of same or different types.
@@ -211,11 +211,10 @@ let arr2 = new Array(3);    // Using constructor
 
 
 
-# 🌟 Day 13 - JavaScript Array Methods
+### 📅 Day 13 - JavaScript Array Methods
 
 Today’s focus: mastering common array methods for data handling.
 
----
 
 ## 🔁 1. `forEach()`
 Used for looping through elements.
@@ -1166,7 +1165,7 @@ console.table(jsonParsed);
 ---
 
 
-## 📅 Day 20 – Advanced Object Methods and Exception Handling
+### 📅 Day 20 – Advanced Object Methods and Exception Handling
 
 ### 🧩 Object Methods: `assign` and Property Checks
 
@@ -1335,3 +1334,517 @@ try {
 - Use JSON methods for creating deep copies.  
 - Exception handling ensures that your program can recover gracefully from runtime errors.
 
+
+
+
+### 📅 Day 21 – Promises and Asynchronous JavaScript
+
+#### 🧩 What is a Promise?
+
+A **Promise** is an object in JavaScript used to handle asynchronous operations. It represents a value that may be available now, or in the future, or never. Promises help avoid callback hell and make asynchronous code easier to read and maintain.
+
+#### 🛠️ States of a Promise
+
+1. **Pending:** The initial state, neither fulfilled nor rejected.
+2. **Resolved (Fulfilled):** The operation completed successfully.
+3. **Rejected:** The operation failed.
+
+---
+
+#### 🧠 Syntax of a Promise
+
+```js
+let promise = new Promise((resolve, reject) => {
+   // Perform some asynchronous operation
+   if (/* success condition */) {
+      resolve("Success message");
+   } else {
+      reject("Error message");
+   }
+});
+```
+
+---
+
+#### 🛠️ Example: Creating and Using a Promise
+
+```js
+let a = 10;
+
+let apnapromise = new Promise((resolve, reject) => {
+   if (a === 10) {
+      resolve("a is 10");
+   } else {
+      reject("a is not 10");
+   }
+});
+
+console.log(apnapromise);
+
+apnapromise
+   .then((msg) => {
+      console.log(msg); // Output: a is 10
+   })
+   .catch((msg) => {
+      console.log(msg); // Output if rejected
+   })
+   .finally(() => {
+      console.log("Promise execution completed");
+   });
+
+console.log("end");
+```
+
+---
+
+#### 🛠️ Fetch API with Promises
+
+The **Fetch API** is used to make HTTP requests. It returns a Promise that resolves to the response of the request.
+
+**Example: Fetching Data from an API**
+
+```js
+fetch("https://api.github.com/users")
+   .then((response) => response.json()) // Convert response to JSON
+   .then((data) => console.log(data)) // Log the data
+   .catch((error) => console.log(error)); // Handle errors
+```
+
+---
+
+#### 🛠️ Using `async` and `await`
+
+The `async` keyword is used to declare a function that returns a Promise. The `await` keyword is used to wait for a Promise to resolve.
+
+**Example: Fetching Data with `async`/`await`**
+
+```js
+let fetching = async () => {
+   try {
+      let respObj = await fetch("https://api.github.com/users");
+      console.log(respObj); // Response object
+      let data = await respObj.json();
+      console.log(data); // Array of user objects
+   } catch (error) {
+      console.log(error); // Handle errors
+   }
+};
+
+// fetching();
+```
+
+---
+
+#### 🛠️ Example: Conditional Promise
+
+```js
+let api = true;
+let data = [{}, {}, {}];
+
+let p5 = new Promise((resolve, reject) => {
+   if (api) {
+      resolve(data);
+   } else {
+      reject("Something went wrong");
+   }
+});
+
+p5.then((res) => {
+   console.log(res); // Output: Array of objects
+}).catch((err) => {
+   console.log(err); // Output: Error message
+});
+```
+
+---
+
+#### 🔑 Keywords and Definitions
+
+1. **Promise:** An object representing the eventual completion or failure of an asynchronous operation.
+2. **resolve:** A function used to mark a Promise as fulfilled.
+3. **reject:** A function used to mark a Promise as rejected.
+4. **then():** A method to handle the resolved state of a Promise.
+5. **catch():** A method to handle the rejected state of a Promise.
+6. **finally():** A method that executes regardless of the Promise's outcome.
+7. **async:** Declares a function that returns a Promise.
+8. **await:** Pauses the execution of an `async` function until the Promise resolves.
+9. **Fetch API:** A modern interface for making HTTP requests.
+
+---
+
+#### 📝 Questions for Practice
+
+1. **What is a Promise in JavaScript?**  
+   A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation.
+
+2. **What are the three states of a Promise?**  
+   - Pending  
+   - Resolved (Fulfilled)  
+   - Rejected  
+
+3. **Write an example of a Promise that resolves if a variable equals 10.**  
+   ```js
+   let a = 10;
+   let promise = new Promise((resolve, reject) => {
+      if (a === 10) {
+         resolve("a is 10");
+      } else {
+         reject("a is not 10");
+      }
+   });
+   ```
+
+4. **What is the difference between `then()` and `catch()`?**  
+   - `then()`: Handles the resolved state of a Promise.  
+   - `catch()`: Handles the rejected state of a Promise.
+
+5. **How does `async`/`await` simplify working with Promises?**  
+   - `async`/`await` makes asynchronous code look synchronous, improving readability and maintainability.
+
+6. **Write an example of fetching data from an API using `async`/`await`.**  
+   ```js
+   let fetchData = async () => {
+      try {
+         let response = await fetch("https://api.github.com/users");
+         let data = await response.json();
+         console.log(data);
+      } catch (error) {
+         console.log(error);
+      }
+   };
+   ```
+
+---
+
+#### ✅ Summary
+
+| **Concept**         | **Description**                                                                 |
+|----------------------|-------------------------------------------------------------------------------|
+| **Promise**          | Represents the eventual result of an asynchronous operation                  |
+| **resolve**          | Marks a Promise as fulfilled                                                 |
+| **reject**           | Marks a Promise as rejected                                                 |
+| **then()**           | Handles the resolved state of a Promise                                      |
+| **catch()**          | Handles the rejected state of a Promise                                      |
+| **finally()**        | Executes code regardless of the Promise's outcome                           |
+| **async/await**      | Simplifies working with Promises by making code look synchronous             |
+| **Fetch API**        | Used to make HTTP requests and returns a Promise                             |
+
+- Promises are essential for handling asynchronous operations in JavaScript.
+- Use `async`/`await` for cleaner and more readable asynchronous code.
+- The Fetch API is a powerful tool for making HTTP requests.
+
+-----
+
+### 📅 Day 22 – Advanced Asynchronous JavaScript: `async`, `await`, and Timers
+
+#### 🧩 `async` and `await`
+
+**What are `async` and `await`?**  
+`async` and `await` are advanced ways to handle Promises in JavaScript. They make asynchronous code easier to read and write by avoiding the need for chaining `.then()` and `.catch()`.
+
+---
+
+#### 🛠️ Key Points
+
+1. **`async` Keyword:**
+   - Declares a function that always returns a Promise.
+   - If the function explicitly returns a value, it is wrapped in a resolved Promise.
+
+2. **`await` Keyword:**
+   - Pauses the execution of an `async` function until the Promise is resolved.
+   - Can only be used inside an `async` function.
+
+3. **Why Use `async`/`await`?**
+   - Simplifies working with Promises.
+   - Avoids callback hell and makes code more readable.
+
+---
+
+#### 🛠️ Example: Using `async` and `await`
+
+```js
+let fetching = async () => {
+    let respObj = await fetch("https://api.github.com/users");
+    console.log(respObj);  
+    let data = await respObj.json();
+    console.log(data);  // data is an array of objects
+};
+// fetching();
+```
+
+---
+
+#### 🧠 What is Callback Hell?
+
+**Callback Hell** refers to a complex situation where multiple or nested callback functions are used, making the code difficult to read and maintain.
+
+**Example of Callback Hell:**
+```js
+setTimeout(() => {
+    console.log("Step 1");
+    setTimeout(() => {
+        console.log("Step 2");
+        setTimeout(() => {
+            console.log("Step 3");
+        }, 1000);
+    }, 1000);
+}, 1000);
+```
+
+**Solution:** Use Promises or `async`/`await` to simplify the code.
+
+---
+
+#### 🛠️ Timers in JavaScript
+
+1. **`setTimeout`:**
+   - Executes a function once after a specified delay.
+   - Syntax: `setTimeout(callback, delay)`
+
+   **Example:**
+   ```js
+   let count = 0;
+   let x = setTimeout(() => {
+       if (count <= 10) {
+           console.log("Rishabh");
+           count += 1;
+       } else {
+           clearTimeout(x);
+       }
+   }, 6000);
+   ```
+
+2. **`setInterval`:**
+   - Executes a function repeatedly at specified intervals.
+   - Syntax: `setInterval(callback, interval)`
+
+   **Example:**
+   ```js
+   let timecount = 0;
+   let y = setInterval(() => {
+       if (timecount <= 10) {
+           console.log(timecount);
+           timecount += 1;
+       } else {
+           clearInterval(y);
+       }
+   }, 1000);
+   ```
+
+3. **`clearTimeout` and `clearInterval`:**
+   - `clearTimeout(timerId)`: Stops a `setTimeout` timer.
+   - `clearInterval(timerId)`: Stops a `setInterval` timer.
+
+---
+
+#### 📝 Questions for Practice
+
+1. **What is the purpose of `async` and `await` in JavaScript?**  
+   - `async` declares a function that returns a Promise.  
+   - `await` pauses the execution of an `async` function until the Promise resolves.
+
+2. **Why is `async` important when using `await`?**  
+   - `await` can only be used inside an `async` function. Without `async`, `await` will throw an error.
+
+3. **What is Callback Hell, and how can it be avoided?**  
+   - Callback Hell occurs when multiple nested callbacks make the code difficult to read.  
+   - It can be avoided using Promises or `async`/`await`.
+
+4. **What is the difference between `setTimeout` and `setInterval`?**  
+   - `setTimeout`: Executes a function once after a delay.  
+   - `setInterval`: Executes a function repeatedly at specified intervals.
+
+5. **Write an example of using `setTimeout` to print "Hello" after 3 seconds.**  
+   ```js
+   setTimeout(() => {
+       console.log("Hello");
+   }, 3000);
+   ```
+
+6. **Write an example of using `setInterval` to print numbers from 1 to 5.**  
+   ```js
+   let count = 1;
+   let interval = setInterval(() => {
+       console.log(count);
+       if (count === 5) {
+           clearInterval(interval);
+       }
+       count++;
+   }, 1000);
+   ```
+
+---
+
+#### ✅ Summary
+
+| **Concept**         | **Description**                                                                 |
+|----------------------|-------------------------------------------------------------------------------|
+| **`async`**          | Declares a function that returns a Promise                                    |
+| **`await`**          | Pauses execution of an `async` function until the Promise resolves            |
+| **Callback Hell**    | Complex nested callbacks; solved using Promises or `async`/`await`            |
+| **`setTimeout`**     | Executes a function once after a delay                                        |
+| **`setInterval`**    | Executes a function repeatedly at specified intervals                         |
+| **`clearTimeout`**   | Stops a `setTimeout` timer                                                    |
+| **`clearInterval`**  | Stops a `setInterval` timer                                                   |
+
+- Use `async`/`await` for cleaner asynchronous code.  
+- Timers like `setTimeout` and `setInterval` are useful for scheduling tasks.  
+- Always handle errors in asynchronous code using `try`/`catch` or `.catch()`.
+
+----
+
+## 📅 Day 23 – DOM and Math in JavaScript
+
+### 🧩 What is DOM?
+
+The **Document Object Model (DOM)** is a tree-like structure that represents the HTML document. It allows JavaScript to interact with and manipulate the structure, style, and content of a webpage.
+
+---
+
+### 🛠️ DOM Manipulation Example
+
+**Changing the Background Color of All `<h1>` Elements:**
+```js
+let headings = document.getElementsByTagName('h1');
+
+for (let i = 0; i < headings.length; i++) {
+   headings[i].style.backgroundColor = "red";
+}
+```
+
+---
+
+### 🧩 Math Object in JavaScript
+
+The **Math** object provides mathematical constants and functions for performing calculations.
+
+#### 🛠️ Common Math Methods
+
+1. **`Math.round(x)`**  
+   Rounds `x` to the nearest integer.  
+   Example:  
+   ```js
+   console.log(Math.round(10.156)); // Output: 10
+   ```
+
+2. **`Math.floor(x)`**  
+   Rounds `x` down to the nearest integer.  
+   Example:  
+   ```js
+   console.log(Math.floor(10.156)); // Output: 10
+   ```
+
+3. **`Math.ceil(x)`**  
+   Rounds `x` up to the nearest integer.  
+   Example:  
+   ```js
+   console.log(Math.ceil(10.156)); // Output: 11
+   ```
+
+4. **`Math.random()`**  
+   Generates a random number between 0 (inclusive) and 1 (exclusive).  
+   Example:  
+   ```js
+   console.log(Math.random()); // Example output: 0.123456
+   ```
+
+5. **Generating Random Integers:**  
+   Example:  
+   ```js
+   console.log(Math.round(10000 * Math.random())); // Example output: 1234
+   ```
+
+---
+
+### 🛠️ Converting Numbers to Words
+
+**Function to Convert Numbers to Words:**
+```js
+let tens = ["", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+let ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+let teens = ["", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+
+let numberToWords = (num) => {
+   if (num === 0) return "Zero";
+   if (num < 0) return "Negative " + numberToWords(-num);
+   if (num > 9999) return "Number too large";
+
+   let words = "";
+
+   if (Math.floor(num / 1000) > 0) {
+      words += ones[Math.floor(num / 1000)] + " Thousand ";
+      num %= 1000;
+   }
+
+   if (Math.floor(num / 100) > 0) {
+      words += ones[Math.floor(num / 100)] + " Hundred ";
+      num %= 100;
+   }
+
+   if (num > 10 && num < 20) {
+      words += teens[num - 10] + " ";
+   } else {
+      words += tens[Math.floor(num / 10)] + " ";
+      num %= 10;
+      words += ones[num] + " ";
+   }
+
+   return words.trim();
+};
+
+console.log(numberToWords(Math.round(10000 * Math.random()))); // Example output: "One Thousand Two Hundred Thirty Four"
+```
+
+---
+
+### 📝 Questions for Practice
+
+1. **What is the DOM in JavaScript?**  
+   The DOM is a tree-like structure that represents the HTML document, allowing JavaScript to interact with and manipulate it.
+
+2. **How can you change the background color of all `<h1>` elements using JavaScript?**  
+   Example:  
+   ```js
+   let headings = document.getElementsByTagName('h1');
+   for (let i = 0; i < headings.length; i++) {
+      headings[i].style.backgroundColor = "red";
+   }
+   ```
+
+3. **What is the difference between `Math.floor()` and `Math.ceil()`?**  
+   - `Math.floor()`: Rounds a number down to the nearest integer.  
+   - `Math.ceil()`: Rounds a number up to the nearest integer.
+
+4. **How can you generate a random integer between 0 and 10000?**  
+   Example:  
+   ```js
+   console.log(Math.round(10000 * Math.random()));
+   ```
+
+5. **Write a function to convert a number into words (e.g., 1234 ➔ "One Thousand Two Hundred Thirty Four").**  
+   Example:  
+   ```js
+   let numberToWords = (num) => {
+      // Function logic here
+   };
+   console.log(numberToWords(1234)); // Output: "One Thousand Two Hundred Thirty Four"
+   ```
+
+---
+
+### ✅ Summary
+
+| **Concept**         | **Description**                                                                 |
+|----------------------|-------------------------------------------------------------------------------|
+| **DOM**             | Tree-like structure representing the HTML document                             |
+| **Math.round(x)**   | Rounds `x` to the nearest integer                                              |
+| **Math.floor(x)**   | Rounds `x` down to the nearest integer                                         |
+| **Math.ceil(x)**    | Rounds `x` up to the nearest integer                                           |
+| **Math.random()**   | Generates a random number between 0 and 1                                      |
+| **Number to Words** | Converts a number into its word representation                                 |
+
+- The DOM allows JavaScript to manipulate HTML elements dynamically.  
+- The Math object provides useful methods for mathematical operations.  
+- Functions like `numberToWords` can be used to convert numbers into readable text.
+
+---

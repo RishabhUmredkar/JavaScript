@@ -18,7 +18,8 @@ let obj = {
         pincode : 440018,
         state : "Maharashtra",
         Area : "Goliabaar sq."
-    }
+    }, 
+    name : "Rishabh11"
 }
 
 console.log(obj.name  + "\n"+obj.age + "\n"+obj.whiteboard);
@@ -149,13 +150,22 @@ console.log(obj1["name"]);
 console.log(Object.entries(obj1));
 
        
+
+console.log(1);
+
 let arr = [
     ["name",  "Tinku"],
     ["ge",23]
 ]
+console.log("*********");
 
+Object.fromEntries(arr); // it will convert the array of arrays into object
+
+console.log(arr);
 console.log(Object.fromEntries(arr));
+console.log("*********");
 
+//
 
 let wind = {
     fun : function()
@@ -213,7 +223,8 @@ obj2 = {
 }
 
 // If want to merge two object in first object then we can use this
-// Object.assign(obj1 , obj2); // it will merge the two objects
+Object.assign(obj1 , obj2); // it will merge the two objects
+
 console.log(obj1); // { name: 'Rishabh', age: 22 }
 console.log(obj2); // { age: 22 }
 

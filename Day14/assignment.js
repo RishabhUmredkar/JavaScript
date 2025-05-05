@@ -1,3 +1,4 @@
+
 //1.
 // Write a program to print the names of 4 cities using forEach loop.
 const cities = ["Mumbai", "Pune", "Indore", "Kolkata"];
@@ -29,7 +30,7 @@ for(const itm of items){
 //5.
 // Write a program to calculate the GST of 4 prices using map function. Print the original prices and the GST prices.
 const prices = [100, 250, 500, 750];
-const gstprices = prices.map(price => price + price * 0.18);
+const gstprices = prices.map((price,prices) => price + price * 0.18);
 console.log(gstprices);
 console.log(prices);
 
@@ -205,6 +206,9 @@ const actors = ["Amitabh", "Shahrukh", "Salman"];
 const subNames = actors.map(name => name.slice(0,3));
 console.log(subNames); // ["Ami", "Sha", "Sal"]
 
+const line = "Rishabh";
+const subLine = line.slice(0, 3);
+console.log(subLine); // "Ris"n
 //32.
 
 const food  = ["Poha", "Upma", "Idli", "Dosa"];

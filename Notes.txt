@@ -584,3 +584,59 @@ Day 21
 
 promise it is n Object. It i s used to achieve asynchronous
 sttus of promise 1. reject 2. resolve 3. pending
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 22
+
+
+sync  and await
+
+It is dvndced way to hndle promise
+
+async is importnt if you wirte await in method
+await is not importnt iy you write sync
+
+
+
+promise is used to overcome the call Back hell problem
+
+
+
+what is call Back hell?
+it means complex situation where we use multiple or nested call Back function
+
+
+
+Settimeout :  it execute only once
+setIntervl : it execute multiple times
+
+clerIntervl
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 23
+
+
+DOM :  Document object model and it is tree like structure like html code
+
+
+math : it is a mathematical operation. 
+
+1. round(x)
+2. floor(x)       // (it will always return the down value)
+3. ceil(x)        // (it will always return the up value)
+4. random()       // It will generate random value
+5. 
