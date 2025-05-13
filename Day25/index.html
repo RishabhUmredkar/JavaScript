@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 25</title>
+       <style>
+        span{
+            margin: 0;
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+       </style>
+</head>
+<body>
+    <form id="form" action="" onsubmit="handleSubmit(event)">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter the Name" ><br>
+        <span id = "nameError">Enter the Name</span><br><br>     
+
+        <label for="number">Number:</label>
+        <input type="tel" id="number" placeholder="Enter a number" ><br><br>
+        <span id = "numberError">Enter the Number</span><br><br>     
+
+        <button type="submit">Submit</button>
+
+    </form>
+    <br><br>
+    <table id="table" border="1" >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody">
+        
+        </tbody>
+
+    <script src="/Day25/index.js"></script> 
+</body>
+</html>

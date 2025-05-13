@@ -640,3 +640,115 @@ math : it is a mathematical operation.
 3. ceil(x)        // (it will always return the up value)
 4. random()       // It will generate random value
 5. 
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 23
+
+
+
+Defer : It is used to load the script after the HTML document has been completely loaded. It is used to prevent blocking of the HTML document while loading the script. It is used to load the script in a non-blocking way.
+
+getElementById : //IF there are same id heading1 in html then it will give prioity to the first one. And in html there is no duplucate id. So it will give the first one.
+getElementByClassName : //It will return the collection of all the elements with the class name heading4. It will return an array of elements with the same class name.
+querySelector : // It will return the first element with the class name h1. It
+querySelectorAll : // It will return the collection of all the elements with the class name h1. It will return an array of elements with the same class name.
+
+we use most is querySelector more than getElementById because it return single element no htmlcollection so we dont need to extract one one element
+
+what is append and appendChild ?
+append it is used to add multiple element.
+appendChild it is used to add single element.
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 26
+innerHtml
+
+
+// //We cannot write more than one html tag using String but.....
+// //We can write more than one html tag using Backticks but.....
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 27
+
+fetch the api and display in the webpage
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 28
+
+preventDefault(); : it is used not to refresh the pge so tht the dt cnnit be remove
+
+There re 3 wy for onclick on the button
+1. <button onclick = "fun()">
+2. <button>   --> js> let button = document.eurySelectotr(""button)
+                          button.onClick = $
+
+3. <button>   --> js> let button = document.eurySelectotr(""button)
+                          button.ddEventlistener = ('click', (e)=>{
+                          })
+
+
+
+ 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Day 29
+
+1. Mouse Event
+   - click
+   - DoubleClick
+   - hover
+   - Scroll 
+   - RightClick
+
+2. Drg Event
+   - drgStrt
+   - drgEnd
+
+3. KeyBord Event
+   - keyPress
+   - KeyDown
+   - KeyUp
+
+4. 
+
+
+prototype  is blueprint of datatype.
+
+to check the or open the  data for checking its originlity then we wil use ".__proto__" 
+for ex:
+let a = 10;
+log(a.__proto__)
+
+
+
+

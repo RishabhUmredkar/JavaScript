@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 27</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
+
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 50px;
+            width: 100%;
+            box-sizing: border-box;
+            /* Include padding in width calculation */
+
+        }
+
+        .product-card {
+            height: 350px;
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .prod-img {
+            height: 180px;
+            width: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #28a745;
+            margin: 5px 0;
+        }
+
+        .product-rating {
+            font-size: 14px;
+            color: #ffc107;
+            margin: 5px 0;
+        }
+
+        .cart-btn {
+            height: 35px;
+            width: 140px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: auto;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cart-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center; margin: 20px 0;"></div>
+    <button onclick="above500()" class="button" style="background-color: #28a745;">
+        Above 500
+    </button>
+    <button onclick="below500()" class="button" style="background-color: #ffc107;">
+        Below 500
+    </button>
+    <button onclick="fetchData()" class="button" style="background-color: #007bff;">
+        Show All
+    </button>
+    </div>
+    <section id="container"></section>
+
+    <script src="/Day27/recipes.js">
+    </script>
+</body>
+
+</html>

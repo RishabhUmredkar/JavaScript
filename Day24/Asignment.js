@@ -1,0 +1,114 @@
+let body = document.querySelector('body');
+
+// Header Section
+let header = document.createElement('header');
+let div1 = document.createElement('div');
+let nav1 = document.createElement('nav');
+let anchor1 = document.createElement('a');
+let anchor2 = document.createElement('a');
+let anchor3 = document.createElement('a');
+let anchor4 = document.createElement('a');
+let button1 = document.createElement('button');
+
+div1.className = 'logo';
+anchor1.href = '#';
+anchor2.href = '#';
+anchor3.href = '#';
+anchor4.href = '#';
+button1.className = 'loginbtn';
+
+div1.textContent = 'Logo';
+anchor1.textContent = 'Home';
+anchor2.textContent = 'About';
+anchor3.textContent = 'Services';
+anchor4.textContent = 'Contact';
+button1.textContent = 'Login';
+
+body.append(header);
+header.append(div1, nav1);
+nav1.append(anchor1, anchor2, anchor3, anchor4, button1);
+
+// Main Section
+let main1 = document.createElement('main');
+let section1 = document.createElement('section');
+let div2 = document.createElement('div');
+let h1 = document.createElement('h1');
+let p1 = document.createElement('p');
+let anchor5 = document.createElement('a');
+let div3 = document.createElement('div');
+let img1 = document.createElement('img');
+
+section1.className = 'content';
+div2.className = 'text';
+anchor5.href = '#';
+anchor5.className = 'get-started';
+div3.className = 'illustration';
+img1.src = 'https://images.unsplash.com/photo-1677630986480-2a4f3b8c5d7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGZpbGxlJTIwcGhvbmV8ZW58MHx8fHwxNjg5NTYyNzQ0&ixlib=rb-4.0.3&q=80&w=1080';
+
+h1.textContent = 'Explaination of Business design';
+p1.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+anchor5.textContent = 'Get Started';
+
+
+body.style.background = 'linear-gradient(to right, #f8fbff, #f3f1ff)';
+body.style.color = '#333';
+
+// Header Styles
+header.style.display = 'flex';
+header.style.justifyContent = 'space-between';
+header.style.alignItems = 'center';
+header.style.padding = '2rem 5%';
+header.style.backgroundColor = 'transparent';
+
+div1.style.fontWeight = 'bold';
+div1.style.fontSize = '1.5rem';
+div1.style.color = '#555';
+
+nav1.style.display = 'flex';
+nav1.style.gap = '1rem';
+
+[anchor1, anchor2, anchor3, anchor4].forEach(anchor => {
+    anchor.style.textDecoration = 'none';
+    anchor.style.color = '#333';
+    anchor.style.fontSize = '1rem';
+});
+
+button1.style.backgroundColor = '#3da9fc';
+button1.style.border = 'none';
+button1.style.padding = '0.5rem 1rem';
+button1.style.color = 'white';
+button1.style.borderRadius = '20px';
+button1.style.cursor = 'pointer';
+
+// Main Section Styles
+main1.style.display = 'flex';
+main1.style.justifyContent = 'space-between';
+main1.style.alignItems = 'center';
+main1.style.padding = '5%';
+
+div2.style.width = '50%';
+
+h1.style.fontSize = '2rem';
+h1.style.marginBottom = '1rem';
+
+p1.style.fontSize = '1rem';
+p1.style.color = '#555';
+p1.style.marginBottom = '1.5rem';
+
+anchor5.style.background = 'linear-gradient(to right, #b14fff, #f857a6)';
+anchor5.style.color = 'white';
+anchor5.style.padding = '0.75rem 1.5rem';
+anchor5.style.borderRadius = '30px';
+anchor5.style.textDecoration = 'none';
+anchor5.style.fontWeight = 'bold';
+
+div3.style.width = '50%';
+
+img1.style.width = '100%';
+img1.style.maxWidth = '500px';
+
+main1.append(section1);
+section1.append(div2, div3);
+div2.append(h1, p1, anchor5);
+div3.append(img1);
+body.append(main1);

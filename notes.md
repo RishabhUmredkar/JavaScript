@@ -1846,5 +1846,142 @@ console.log(numberToWords(Math.round(10000 * Math.random()))); // Example output
 - The DOM allows JavaScript to manipulate HTML elements dynamically.  
 - The Math object provides useful methods for mathematical operations.  
 - Functions like `numberToWords` can be used to convert numbers into readable text.
+---
+
+
+#### 🧩 Script Loading: `defer`
+
+**What is `defer`?**  
+The `defer` attribute is used to load a script after the HTML document has been completely parsed. It ensures that the script does not block the rendering of the HTML document, allowing the page to load faster.
+
+**Key Points:**
+- Scripts with `defer` are executed in the order they appear in the document.
+- The script is executed only after the entire HTML document has been parsed.
+- It is used to prevent blocking of the HTML document while loading the script.
+
+**Example:**
+```html
+<script src="script.js" defer></script>
+```
+
+---
+
+#### 🧩 DOM Selection Methods
+
+1. **`getElementById`:**
+   - Returns the first element with the specified `id`.
+   - If there are multiple elements with the same `id` (which is invalid in HTML), it will prioritize the first one.
+   - **Note:** In HTML, `id` should always be unique.
+
+   **Example:**
+   ```js
+   let element = document.getElementById("heading1");
+   console.log(element);
+   ```
+
+2. **`getElementsByClassName`:**
+   - Returns a collection (HTMLCollection) of all elements with the specified class name.
+   - The returned collection is array-like but not a true array.
+
+   **Example:**
+   ```js
+   let elements = document.getElementsByClassName("heading4");
+   console.log(elements); // HTMLCollection of elements
+   ```
+
+3. **`querySelector`:**
+   - Returns the first element that matches the specified CSS selector.
+   - It is more versatile than `getElementById` or `getElementsByClassName`.
+
+   **Example:**
+   ```js
+   let element = document.querySelector(".h1");
+   console.log(element); // First element with class "h1"
+   ```
+
+4. **`querySelectorAll`:**
+   - Returns a collection (NodeList) of all elements that match the specified CSS selector.
+   - The returned collection is array-like and can be iterated using `forEach`.
+
+   **Example:**
+   ```js
+   let elements = document.querySelectorAll(".h1");
+   console.log(elements); // NodeList of elements with class "h1"
+   ```
+
+**Why Use `querySelector` Over `getElementById`?**
+- `querySelector` is more flexible as it supports CSS selectors.
+- It returns a single element directly, not an HTMLCollection, so there is no need to extract individual elements.
+
+---
+
+#### 🧩 Adding Elements: `append` vs `appendChild`
+
+1. **`append`:**
+   - Used to add multiple elements or text nodes to a parent element.
+   - Can accept strings and Node objects.
+
+   **Example:**
+   ```js
+   let parent = document.getElementById("parent");
+   parent.append("Hello", " World");
+   ```
+
+2. **`appendChild`:**
+   - Used to add a single Node object (element or text node) to a parent element.
+   - Does not accept strings directly.
+
+   **Example:**
+   ```js
+   let parent = document.getElementById("parent");
+   let child = document.createElement("div");
+   child.textContent = "Hello World";
+   parent.appendChild(child);
+   ```
+
+---
+
+#### 📝 Questions for Practice
+
+1. **What is the purpose of the `defer` attribute in a `<script>` tag?**  
+   The `defer` attribute ensures that the script is executed only after the HTML document has been completely parsed, preventing it from blocking the rendering of the page.
+
+2. **What is the difference between `getElementById` and `querySelector`?**  
+   - `getElementById`: Selects an element by its `id`.  
+   - `querySelector`: Selects the first element that matches a CSS selector.
+
+3. **How does `getElementsByClassName` differ from `querySelectorAll`?**  
+   - `getElementsByClassName`: Returns an HTMLCollection (live collection).  
+   - `querySelectorAll`: Returns a NodeList (static collection).
+
+4. **What is the difference between `append` and `appendChild`?**  
+   - `append`: Can add multiple elements or text nodes.  
+   - `appendChild`: Can add only a single Node object.
+
+5. **Write an example of using `querySelectorAll` to change the background color of all elements with the class `box`.**  
+   ```js
+   let boxes = document.querySelectorAll(".box");
+   boxes.forEach((box) => {
+       box.style.backgroundColor = "blue";
+   });
+   ```
+
+---
+
+#### ✅ Summary
+
+| **Method**               | **Description**                                                                 |
+|---------------------------|-------------------------------------------------------------------------------|
+| **`defer`**              | Loads the script after the HTML document has been parsed                      |
+| **`getElementById`**     | Selects an element by its `id`                                                |
+| **`getElementsByClassName`** | Selects all elements with a specific class name (returns HTMLCollection)     |
+| **`querySelector`**      | Selects the first element matching a CSS selector                             |
+| **`querySelectorAll`**   | Selects all elements matching a CSS selector (returns NodeList)               |
+| **`append`**             | Adds multiple elements or text nodes to a parent element                     |
+| **`appendChild`**        | Adds a single Node object to a parent element                                 |
+
+- Use `defer` to improve page load performance.  
+- Prefer `querySelector` and `querySelectorAll` for more flexibility in DOM selection.  
+- Use `append` for adding multiple elements and `appendChild` for adding a single element.
 
 ---
