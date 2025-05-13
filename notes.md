@@ -1,175 +1,175 @@
 # 📒 JavaScript Learning Notes  
-## 📅 Day 29 – Advanced JavaScript Events and Concepts
+**By Rishabh Umredkar**  
 
-### 🧩 Mouse Events
+---
 
-Mouse events are triggered by user interactions with the mouse. Common mouse events include:
+## 📌 Topics Covered So Far
 
-1. **`click`**: Triggered when the user clicks on an element.
-2. **`dblclick`**: Triggered when the user double-clicks on an element.
-3. **`mouseover` / `mouseout`**: Triggered when the mouse hovers over or leaves an element.
-4. **`scroll`**: Triggered when the user scrolls the page or an element.
-5. **`contextmenu`**: Triggered when the user right-clicks on an element.
+1. var / let / const
+2. null vs undefined
+3. What is NaN?
+4. Symbol
+5. BigInt – Range and use
+6. Which variables get hoisted?
+7. Truthy / Falsy values
 
-**Example:**
+---
+
+## 🧠 Backup Class
+
+### 📅 Day 1 – Introduction to JavaScript
+
+**What is JavaScript?**  
+- Scripting Language, High-level, Object-Oriented  
+- Object-Based, Single-threaded, Synchronous  
+- Interpreted and compiled language  
+
+**Execution of JS:**  
+- JS code goes to the JS engine  
+- JS engine divides code into small parts, sends to compiler, then interpreter  
+- Requires JS engine – available in browsers or via Node.js  
+
+**Ways to Write JS:**  
+1. Internal (in HTML using `<script>` tag)  
+2. External (`.js` file)  
+
+**Declaration & Initialization:**  
+- Declaring without datatype makes it a global variable  
+
+**Tokens:** Smallest part of programming language  
+- Types: Keyword, Identifier, Operator, Separator, Literal  
+
+**Datatypes (8 total):**  
+1. Number  2. Boolean  3. String  4. Symbol 5. Null    6. Undefined  7. NaN   8. BigInt  
+
+**String Declaration:**  
+- Single quotes `''`, Double quotes `""`, Backticks ``` ```
+
+---
+
+### 📅 Day 2 – Variables
+
+| Variable | Declaration | Initialization | Decl. + Init. | Updation | Redecl. + Reinit. | Default Value            |
+|----------|-------------|----------------|----------------|----------|--------------------|--------------------------|
+| var      | YES         | YES            | YES            | YES      | YES                | Window Object            |
+| let      | YES         | YES            | YES            | YES      | NO                 | Temporal Dead Zone       |
+| const    | NO          | NO             | YES            | NO       | NO                 | Temporal Dead Zone       |
+
+- Undeclared variables default to `undefined`
+
+**Examples:**  
 ```js
-let button = document.querySelector("button");
-button.addEventListener("click", () => {
-   console.log("Button clicked!");
-});
+console.log("The sum of " + a1 + " and " + b + " is " + (a1 + b)); // Double quotes  
+console.log(`The sum of ${a1} and ${b} is ${a1 + b}`); // Backticks  
 ```
 
 ---
 
-### 🛠️ Drag Events
+### 📅 Day 3
 
-Drag events are used to handle drag-and-drop functionality. Common drag events include:
+**Lexical Scope:** Accessing the members outside the function.  
+**Closure:** A special memory allocation in the window object.
 
-1. **`dragstart`**: Triggered when the user starts dragging an element.
-2. **`dragend`**: Triggered when the user releases the dragged element.
+---
 
-**Example:**
+### 📅 Day 4 – Functions
+
+1. `=>` is called fat function / arrow function  
+2. Prime number check example  
+3. Function Expression (Anonymous functions)  
+4. Immediate Invoked Function Expression (IIFE)  
+5. Higher Order Function (accepts function as argument)  
+6. Callback Function (passed as an argument)  
+
+---
+
+### 📅 Day 5 – Function Types
+
+1. **Arrow Function:** `let func = () => {}`  
+2. **Regular Function:**  
 ```js
-let draggable = document.querySelector(".draggable");
-draggable.addEventListener("dragstart", () => {
-   console.log("Drag started!");
-});
-draggable.addEventListener("dragend", () => {
-   console.log("Drag ended!");
-});
-```
+function demo() { }
+```  
+3. **Function Expression:**  
+- Arrow: `let f = () => {}`  
+- Regular: `let f2 = function() {}`  
 
----
-
-### 🛠️ Keyboard Events
-
-Keyboard events are triggered by user interactions with the keyboard. Common keyboard events include:
-
-1. **`keypress`**: Triggered when a key is pressed (deprecated, use `keydown` instead).
-2. **`keydown`**: Triggered when a key is pressed down.
-3. **`keyup`**: Triggered when a key is released.
-
-**Example:**
+4. **First-class functions:**  
 ```js
-document.addEventListener("keydown", (e) => {
-   console.log(`Key pressed: ${e.key}`);
-});
-```
+let func = () => {}
+```  
 
----
-
-### 🧠 Prototype in JavaScript
-
-A **prototype** is a blueprint of a data type in JavaScript. Every object in JavaScript has a prototype, which is used to share properties and methods among instances.
-
-**Accessing the Prototype:**
-You can access the prototype of an object using the `.__proto__` property.
-
-**Example:**
+5. **IIFE Example:**  
 ```js
-let a = 10;
-console.log(a.__proto__); // Logs the prototype of the Number object
+((a) => console.log(a))(10);  
+console.log("start");  
+((a) => { console.log(a) })(10);  
+console.log("end");  
 ```
 
----
-
-### 🛠️ Microtask and Macrotask Queues
-
-JavaScript uses an **event loop** to manage asynchronous operations. Tasks are divided into two categories:
-
-1. **Microtask Queue**:
-   - Includes tasks like `Promise` callbacks, `async/await` functions.
-   - Executed before macrotasks.
-
-2. **Macrotask Queue**:
-   - Includes tasks like `setTimeout`, `setInterval`, and DOM events.
-   - Executed after all microtasks are completed.
-
-**Example:**
+6. **HOF and CBF:**  
 ```js
-console.log("Start");
-
-setTimeout(() => {
-   console.log("Macrotask: setTimeout");
-}, 0);
-
-Promise.resolve().then(() => {
-   console.log("Microtask: Promise");
-});
-
-console.log("End");
-```
-
-**Output:**
-```
-Start
-End
-Microtask: Promise
-Macrotask: setTimeout
+let hof = (cbf_function) => { cbf_function(); };  
+let cbf_function = () => { console.log("cbf_function"); };  
+hof(cbf_function);
 ```
 
 ---
 
-### 🛠️ Event Loop
+### 📅 Day 6
 
-The **event loop** is a mechanism that continuously checks the call stack and the task queues (microtask and macrotask) to execute tasks in the correct order.
-
-**Key Points:**
-- The event loop ensures that microtasks are executed before macrotasks.
-- It allows JavaScript to handle asynchronous operations efficiently.
+- AST: Abstract Syntax Tree
 
 ---
 
-### 📝 Questions for Practice
+### 📅 Day 8 – Hoisting & Temporal Dead Zone
 
-1. **What are the common mouse events in JavaScript?**  
-   - `click`, `dblclick`, `mouseover`, `mouseout`, `scroll`, `contextmenu`.
+1. **Temporal Dead Zone (TDZ):**  
+   Time between variable declaration and initialization  
 
-2. **What is the difference between `dragstart` and `dragend` events?**  
-   - `dragstart`: Triggered when the user starts dragging an element.  
-   - `dragend`: Triggered when the user releases the dragged element.
+2. **Hoisting:**  
+   Variable/function lifted to top of execution scope  
 
-3. **What are the three types of keyboard events?**  
-   - `keypress` (deprecated), `keydown`, `keyup`.
+3. **`this`:** Refers to the current object  
 
-4. **How can you access the prototype of a JavaScript object?**  
-   Use the `.__proto__` property:
-   ```js
-   let obj = {};
-   console.log(obj.__proto__);
-   ```
-
-5. **What is the difference between microtask and macrotask queues?**  
-   - **Microtask Queue**: Includes `Promise` callbacks and `async/await`. Executed before macrotasks.  
-   - **Macrotask Queue**: Includes `setTimeout`, `setInterval`, and DOM events. Executed after microtasks.
-
-6. **Write an example of using the event loop with `setTimeout` and `Promise`.**  
-   ```js
-   console.log("Start");
-
-   setTimeout(() => {
-      console.log("Macrotask: setTimeout");
-   }, 0);
-
-   Promise.resolve().then(() => {
-      console.log("Microtask: Promise");
-   });
-
-   console.log("End");
-   ```
-
-7. **What is the purpose of the event loop in JavaScript?**  
-   The event loop ensures that tasks are executed in the correct order, allowing JavaScript to handle asynchronous operations efficiently.
+**Behavior:**  
+- `let` / `const` in TDZ ➔ Error  
+- `var` ➔ Hoisted to window object ➔ `undefined`  
 
 ---
 
-### ✅ Summary
+### 📅 Day 9 – Hoisting (Advanced)
 
-| **Concept**               | **Description**                                                                 |
-|----------------------------|-------------------------------------------------------------------------------|
-| **Mouse Events**           | Events triggered by mouse interactions (`click`, `dblclick`, `scroll`, etc.)  |
-| **Drag Events**            | Events for drag-and-drop functionality (`dragstart`, `dragend`)               |
-| **Keyboard Events**        | Events triggered by keyboard interactions (`keydown`, `keyup`)                |
+1. Regular Function ➔ Hoisted as function  
+2. Arrow Function ➔ Hoisted as variable ➔ Error  
+3. Function Expression ➔ Hoisted as variable ➔ Error  
+
+---
+
+### 📅 Day 11 – Strings
+
+** String ***
+
+Theere are 4 way to create String
+Declaration of String
+      we can declare String  
+            in Single Qoutes ('')
+            in Double Qoutes (" ")
+            in Backticks (``)
+            By new Keyword let String = new String("hello);
+
+| No. | Method                    | Syntax                        |
+|-----|---------------------------|-------------------------------|
+|  1  | toLowerCase()             | str.toLowerCase()             |
+|  2  | toUpperCase()             | str.toUpperCase()             |
+|  3  | charAt(index)             | str.charAt(index)             |
+|  4  | charCodeAt(index)         | str.charCodeAt(index)         |
+|  5  | startsWith("text")        | str.startsWith("text")        |
+|  6  | endsWith("text")          | str.endsWith("text")          |
+|  7  | padStart(length, char)    | str.padStart(length, "char")  |
+|  8  | padEnd(length, char)      | str.padEnd(length, "char")    |
+|  9  | indexOf("char")           | str.indexOf("char")           |
+| 10  | replace("a", "b")         | str.replace("a", "b")         |
 | 11  | replaceAll("a", "b")      | str.replaceAll("a", "b")      |
 | 12  | replace(/pattern/g, "b")  | str.replace(/pattern/g, "b")  |
 | 13  | includes("text")          | str.includes("text")          |
@@ -1336,6 +1336,7 @@ try {
 
 
 
+---
 
 ### 📅 Day 21 – Promises and Asynchronous JavaScript
 
@@ -1692,6 +1693,7 @@ setTimeout(() => {
 - Always handle errors in asynchronous code using `try`/`catch` or `.catch()`.
 
 ----
+
 
 ## 📅 Day 23 – DOM and Math in JavaScript
 
@@ -2596,4 +2598,3 @@ The **event loop** is a mechanism that continuously checks the call stack and th
 Thank you for taking the time to go through these JavaScript learning notes. I hope they have been helpful in your journey to mastering JavaScript. Keep practicing and exploring new concepts to enhance your skills. 
 
 [- Rishabh Umredkar](https://rishabhportfolio-nine.vercel.app/)
-
