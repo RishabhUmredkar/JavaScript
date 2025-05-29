@@ -173,6 +173,8 @@ Declaration of String
 | 11  | replaceAll("a", "b")      | str.replaceAll("a", "b")      |
 | 12  | replace(/pattern/g, "b")  | str.replace(/pattern/g, "b")  |
 | 13  | includes("text")          | str.includes("text")          |
+| 14  | Split("")                 | str.split("")                 |
+| 15  | includes(index, index)    | str.slice(initial ind, final ind)|
 
 ---
 
@@ -2598,3 +2600,4 @@ The **event loop** is a mechanism that continuously checks the call stack and th
 Thank you for taking the time to go through these JavaScript learning notes. I hope they have been helpful in your journey to mastering JavaScript. Keep practicing and exploring new concepts to enhance your skills. 
 
 [- Rishabh Umredkar](https://rishabhportfolio-nine.vercel.app/)
+

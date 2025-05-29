@@ -24,8 +24,10 @@ console.log(b); // 20
 
 
 let str = "Rishabh";
-console.log(str.slice(3, -2));  // "sha"
+console.log(str.slice(3, -2));  // "ha"
 console.log(str.slice(-4, -1));  // "hab"
+console.log(str.slice(1));  // "ishabh"
+
 
 console.log(str.slice(-1, -4));  // "" (empty string)
 console.log(str.slice(-6, -3));  // "ish"
@@ -39,6 +41,9 @@ console.log(str.slice(2, 5)); // "sha"
 console.log(str.slice(3));    // "habh"
 console.log(str.slice(0, -1)); // "Rishab"
 
+console.log("-Splic");
+
+
 
 let number = 1234567890;
 let strnum  = number.toString();
@@ -51,7 +56,7 @@ console.log(lastDigit); // "6789"
 let arr = ["Rishabh", "is", "learning", "JavaScript"];
 
 let alpha = ["a", "b", "c", "d", "e", "f"];
-alpha.splice(-4,-5); 
+alpha.splice(-2,2); 
 console.log(alpha); // ["a", "b", "c", "d"]
 
 // arr.splice(-3, 1, "loves", "coding");
@@ -116,3 +121,32 @@ const people = [
   console.log("Filtered People (names starting with 'P'):", filteredPeople);
   console.log(Object.entries(filteredPeople));
   
+
+  let jsonData = [{ id: 1, name: "Rishabh" }];
+let jsonString = JSON.stringify(jsonData);
+let jsonParsed = JSON.parse(jsonString);
+console.table(jsonParsed);
+console.table(jsonData);
+
+let count = 0;
+let x = setTimeout(() => {
+    if (count <= 10) {
+        console.log("Rishabh");
+        count += 1;
+    } else {
+        clearTimeout(x);
+    }
+}, 6000);
+
+
+let y = setInterval(()=>{
+  if(count<=10)
+  {
+    console.log("timer");
+    count+=1;
+  }
+  else{
+    clearInterval(y)
+  }
+
+},1000)

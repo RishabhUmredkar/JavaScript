@@ -34,6 +34,7 @@ console.log(p); // X
 console.log(r); // Z
 
 
+console.log("1");
 
 // Rest and spread
 
@@ -42,6 +43,8 @@ let backPack3 = ["Tent", "Compass","Torch", "Rope", "Lighter", "Tshirt", "Pants"
 
 let [g,h,i,... cloths] = backPack3; ///! REST Parameter    It store the whole vlues in single continer
 console.log(cloths);
+console.log(g);
+console.log(h);
 
 console.log(...backPack3);  //! SPREAD 
 
@@ -68,3 +71,6 @@ let arr1 = [10,20,30];
 let arr2 = [40, 10, 30];
 let newArr = [...arr1, ...arr2];
 console.log(newArr);
+
+
+
