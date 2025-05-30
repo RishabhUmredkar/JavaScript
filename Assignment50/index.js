@@ -375,6 +375,8 @@ function reverseDigits(num) {
 console.log(reverseDigits(reverseNumber)); // Output: 54321
 
 
+
+//34.
 let CountEvenOdd = 123456;
 function countEvenOddDigits(num) {
     let evenCount = 0;
@@ -393,4 +395,213 @@ function countEvenOddDigits(num) {
 }
 console.log(countEvenOddDigits(CountEvenOdd)); // Output: { evenCount: 3, oddCount: 3 }
 
-//34.
+//35.
+
+let celcius = 25;
+function celsiusToFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
+}
+console.log(celsiusToFahrenheit(celcius)); // Output: 77    
+
+// //36.
+// let checkStrNumeric = "12345";
+// function isNumeric(str) {
+//     return !isNaN(str) && !isNaN(parseFloat(str));
+// }
+// console.log(isNumeric(checkStrNumeric)); // Output: true
+
+
+// //37.
+// let nonRepeatingString = "aabbcddeeegc";
+// function findFirstNonRepeatingCharacter(str) {
+//     const charCount = {};
+//     for (let char of str) {
+//         charCount[char] = (charCount[char] || 0) + 1;
+//     }
+    
+//     for (let char of str) {
+//         if (charCount[char] === 1) {
+//             return char;
+//         }
+//     }
+    
+//     return null; // If no non-repeating character is found                                                      
+// }   
+// console.log(findFirstNonRepeatingCharacter(nonRepeatingString)); // Output: "c"
+
+
+
+//38.
+let duplicateElement = [1, 2, 3, 4, 5, 1, 2];
+function findDuplicateElements(arr) {
+    const seen = new Set();
+    const duplicates = [];
+    
+    for (let num of arr) {
+        if (seen.has(num)) {
+            duplicates.push(num);
+        } else {
+            seen.add(num);
+        }
+    }
+    return [...new Set(duplicates)];
+}
+console.log(findDuplicateElements(duplicateElement)); // Output: [1, 2]
+
+//39.
+function generateRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(generateRandomNumber(1, 100)); // Output: Random number between 1 and 100
+
+
+//40.
+let checkLeapYear = 2024;
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+}
+console.log(isLeapYear(checkLeapYear)); // Output: true
+
+
+//41.
+let CountCases = "HelloWorld!";
+function countUpperLowerCases(str) {
+    let upperCount = 0;
+    let lowerCount = 0;
+    
+    for (let char of str) {
+        if (char >= 'A' && char <= 'Z') {
+            upperCount++;
+        } else if (char >= 'a' && char <= 'z') {
+            lowerCount++;
+        }
+    }
+    
+    return { upperCount, lowerCount };
+}
+
+console.log(countUpperLowerCases(CountCases)); // Output: { upperCount: 2, lowerCount: 8 }
+
+
+//42.
+let AverageArray = [1, 2, 3, 4, 5];
+function calculateAverage(arr) {
+    const sum = arr.reduce((acc, num) => acc + num, 0);
+    return sum / arr.length;
+}
+console.log(calculateAverage(AverageArray)); // Output: 3
+
+
+//43. 
+let checkAllElementUnique = [1, 2, 3, 4, 5];
+function areAllElementsUnique(arr) {
+    const seen = new Set();
+    for (let num of arr) {
+        if (seen.has(num)) {
+            return false; // Duplicate found
+        }
+        seen.add(num);
+    }
+    return true; // All elements are unique
+}
+
+
+//44.
+let PrintStarPattern = 5;
+function printStarPattern(n) {
+    let pattern = '';
+    for (let i = 1; i <= n; i++) {
+        pattern += '*'.repeat(i) + '\n';
+    }
+    return pattern;
+}
+console.log(printStarPattern(PrintStarPattern));
+
+
+//45.
+let midium = [1, 2, 3, 4, 5];
+function findMedian(arr) {
+    arr.sort((a, b) => a - b);
+    const mid = Math.floor(arr.length / 2);
+    
+    if (arr.length % 2 === 0) {
+        return (arr[mid - 1] + arr[mid]) / 2; // Average of two middle elements
+    } else {
+        return arr[mid]; // Middle element for odd length
+    }
+}
+console.log(findMedian(midium)); // Output: 3
+
+//46.
+let mode = [1, 2, 2, 3, 4, 4, 4, 5];
+function findMode(arr) {
+    const frequency = {};
+    let maxFreq = 0;
+    let mode = [];
+    
+    for (let num of arr) {
+        frequency[num] = (frequency[num] || 0) + 1;
+        if (frequency[num] > maxFreq) {
+            maxFreq = frequency[num];
+            mode = [num];
+        } else if (frequency[num] === maxFreq) {
+            mode.push(num);
+        }
+    }
+    
+    return mode;
+}
+console.log(findMode(mode)); // Output: [4]
+
+
+//47.
+let sumEvenNumbers = [1, 2, 3, 4, 5];
+function sumOfEvenNumbers(arr) {
+    return arr.reduce((sum, num) => {
+        if (num % 2 === 0) {
+            return sum + num;
+        }
+        return sum;
+    }, 0);
+}
+console.log(sumOfEvenNumbers(sumEvenNumbers)); // Output: 6
+
+
+//48.
+let sumOddNumbers = [1, 2, 3, 4, 5];
+function sumOfOddNumbers(arr) {
+    return arr.reduce((sum, num) => {
+        if (num % 2 !== 0) {
+            return sum + num;
+        }
+        return sum;
+    }, 0);
+}   
+console.log(sumOfOddNumbers(sumOddNumbers)); // Output: 9
+
+
+//49.
+let timeFormat = "14:30";
+function convertTo12HourFormat(time) {
+    let [hours, minutes] = time.split(':').map(Number);
+    const period = hours >= 12 ? 'PM' : 'AM';
+    
+    if (hours > 12) {
+        hours -= 12;
+    } else if (hours === 0) {
+        hours = 12; // Midnight case
+    }
+    
+    return `${hours}:${minutes.toString().padStart(2, '0')} ${period}`;
+}
+console.log(convertTo12HourFormat(timeFormat)); // Output: "2:30 PM"
+
+//50.
+let checkValue = [1, 2, 3, 4, 5];
+function checkValueInArray(arr, value) {
+    return arr.includes(value);
+}
+console.log(checkValueInArray(checkValue, 3)); // Output: true
+
+
+
